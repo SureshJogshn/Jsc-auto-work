@@ -1,7 +1,7 @@
 {
   "name": "jsc-app",
   "version": "0.1.0",
-  "homepage": "https://sureshjogshn.github.io/Jsc-Auto-Electric",
+  "homepage": "https://jscautoelecticworks.netlify.app",
   "private": true,
   "dependencies": {
     "cra-template": "1.2.0",
