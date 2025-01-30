@@ -34,22 +34,23 @@ const ServiceSlider = () => {
                             style={{ width: "100%" }}
                         >
                             <div className="flex flex-col md:flex-row md:justify-around md:items-center 
-                            bg-white rounded-lg shadow-lg gap-9 p-9 md:p-9 text-center bg-gradient-to-r 
+                            bg-white rounded-lg shadow-lg gap-2 md:gap-9 p-5 md:p-9 text-center bg-gradient-to-r 
                             from-blue-600">
-                                <div className="flex flex-col gap-3 md:gap-8 items-center">
-                                    <img className="w-[50px] md:w-[70px] animate-carMove" src={service.img} alt="car" />
-                                    <h1 className="text-[25px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>
-                                    <button className="border-2 px-2 py-2 md:px-4 md:py-2 rounded border-white text-white hover:text-black shadow-md shadow-white hover:bg-white ">Read More</button>
+                                <div className="flex flex-col gap-1 md:gap-8 items-center">
+                                    <img className="w-[35px] md:w-[70px] animate-carMove" src={service.img} alt="car" />
+                                    <h1 className="text-[15px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>
+                                    <button className="border px-2 py-1 text-[10px] md:text-[15px] md:px-4 md:py-2 rounded border-white text-white hover:text-black
+                                     shadow-md shadow-white hover:bg-white ">Read More</button>
                                 </div>
                                 <div className="flex flex-col gap-4 bg-blue-600 md:w-[600px] p-6 md:p-4 rounded shadow-lg shadow-white">
-                                    <div className="border-2 border-white p-2 text-start rounded">
-                                        <h2 className="text-[18px] md:text-2xl text-white font-semibold mb-2"><span>🔧</span> Overview</h2>
-                                        <p className="text-white text-[15px] md:text-[20px] text-white text-[20px]">{service.overview}</p>
+                                    <div className="border border-white p-2 text-start rounded">
+                                        <h2 className="text-[15px] md:text-2xl text-white font-semibold mb-2"><span>🔧</span> Overview</h2>
+                                        <p className="text-white text-[9.9px]  md:text-[20px] text-white text-[20px]">{service.overview}</p>
                                     </div>
-                                    <div className="border-2 border-white p-2 text-start rounded">
-                                        <h2 className="text-[18px] md:text-2xl text-white font-semibold mb-2"><span>🔧</span> Features</h2>
-                                        <p className="text-white md:text-[20px]"><span>✔</span> {service.features.first}</p>
-                                        <p className="text-white md:text-[20px]"><span>✔</span> {service.features.second}</p>
+                                    <div className="border border-white p-2 text-start rounded">
+                                        <h2 className="text-[15px] md:text-2xl text-white font-semibold mb-2"><span>🔧</span> Features</h2>
+                                        <p className="text-white  text-[9.9px]  md:text-[20px]"><span>✔</span> {service.features.first}</p>
+                                        <p className="text-white  text-[9.9px]  md:text-[20px]"><span>✔</span> {service.features.second}</p>
                                     </div>
                                 </div>
                             </div>
@@ -61,13 +62,13 @@ const ServiceSlider = () => {
             {/* Navigation Arrows */}
             <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-800 hover:bg-blue-700 border-2 border-yellow-400 text-white p-3 md:p-4 rounded-full shadow-lg"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-blue-800 hover:bg-blue-700 border-2 border-yellow-400 text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ◀
             </button>
             <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-800 hover:bg-blue-700 border-2 border-yellow-400 text-white p-3 md:p-4 rounded-full shadow-lg"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-blue-800 hover:bg-blue-700 border-2 border-yellow-400 text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ▶
             </button>
