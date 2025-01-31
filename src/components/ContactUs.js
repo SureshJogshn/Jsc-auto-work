@@ -3,7 +3,7 @@ import ceo from '../images/CEO.jpg'
 
 export default function ContactUs() {
     return (
-        <div className='md:w-full pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px] bg-[#20232A] p-5' id='contact'>
+        <div className='md:w-full pt-[50px] pb-[53px] md:pt-[130px] md:pb-[120px] bg-[#20232A] p-5' id='contact'>
             <h1 className='text-2xl md:text-4xl font-semibold text-center text-white'>Contact Us</h1>
             <div className='flex flex-col md:flex-row md:my-[70px] md:gap-5 p-5'>
                 <div className='flex flex-col text-[13px] md:text-[18px] text-semibold text-white md:w-[2000px]
