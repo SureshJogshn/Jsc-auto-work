@@ -17,7 +17,8 @@ export default function ContactUs() {
                         <p>Working Hours: Monday to Saturday, 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div className='md:w-[2000px] h-[200px] md:h-[270px] overflow-y-scroll md:overflow-auto overflow-hidden text-[15px] md:text-[18px] text-white rounded md:py-[10px]'>
+                <div className='md:w-[2000px] h-[200px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
+                 overflow-hidden text-[15px] md:text-[18px] text-white rounded md:py-[10px] mt-[20px]'>
                     <p className='mt-3'>
                         Hello, main Naresh Kumar hoon, aur JSC Electric mein hum aapki car-related electrical
                         problems ko solve karne ke liye hamesha ready hain. Agar aapko car wiring, ECM diagnostics,
