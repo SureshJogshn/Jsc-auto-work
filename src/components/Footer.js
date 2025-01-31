@@ -42,10 +42,10 @@ const Footer = () => {
                     </div>
                     <ul className='flex gap-5 justify-center items-center'>
                         <li className='corsor-pointer text-white text-[14px] md:text-[19px] font-semibold'>📱 Follow Us:</li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="/home"><FaWhatsapp className='text-green-300' /></a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="https://www.instagram.com/jscjaishreechamundaauto?utm_source=qr&igsh=MWVkM2NuMTV6N2s4bA=="><FaInstagram className='text-orange-500' /></a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="/home"><FaFacebook className='text-blue-600' /></a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="https://www.youtube.com/@jscjaishreechamundaautoele5268"><FaYoutube className='text-red-500' /></a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="/home"><FaWhatsapp /></a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="https://www.instagram.com/jscjaishreechamundaauto?utm_source=qr&igsh=MWVkM2NuMTV6N2s4bA=="><FaInstagram /></a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="/home"><FaFacebook /></a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-2xl'><a href="https://www.youtube.com/@jscjaishreechamundaautoele5268"><FaYoutube /></a></li>
 
                     </ul>
                     <div className='flex text-[11px] md:text-[16px] text-white'>
