@@ -16,7 +16,7 @@ function App() {
         <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
           <div className=' flex items-center'>
             <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-            <div className='text-[17px] md:text-[25px] uppercase text-white font-bold'> Jsc Auto Electric </div>
+            <div className='text-[10px] xs:text-[17px] md:text-[25px] uppercase text-white font-bold'> Jsc Auto Electric </div>
           </div>
           <ul className='hidden md:flex gap-9 text-[21px] text-white'>
             <li ><Link className='hover:border-b-2 border-[#FBFBFB]' to="/">Home</Link></li>
