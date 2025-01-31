@@ -21,7 +21,7 @@ const ServiceSlider = () => {
 
     return (
         <div className="relative bg-[#3B3F4A] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]" id="services">
-            <h2 className="text-[17px] font-semibold text-center mb-4 text-white">Our Services</h2>
+            <h2 className="text-[18px] font-semibold text-center mb-4 text-white">Our Services</h2>
             <div className="overflow-hidden">
                 <div
                     className="flex transition-transform duration-500"
@@ -34,10 +34,10 @@ const ServiceSlider = () => {
                             style={{ width: "100%" }}
                         >
                             <div className="flex flex-col md:flex-row md:justify-around md:items-center 
-                            bg-white rounded-lg shadow-lg gap-2 md:gap-9 p-5 md:p-9 text-center bg-[#2C2F3A]">
-                                <div className="flex flex-col gap-2 md:gap-8 items-center">
+                            bg-white rounded-lg shadow-lg md:gap-9 p-5 md:p-9 text-center bg-[#2C2F3A]">
+                                <div className="flex flex-col gap-4 md:gap-8 items-center">
                                     <img className="w-[50px] md:w-[70px] animate-carMove" src={service.img} alt="car" />
-                                    <h1 className="text-[15px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>
+                                    <h1 className="text-[18px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>
                                     <button className="border px-4 py-2 text-[12px] md:text-[15px] md:px-4 md:py-2 rounded border-white text-white hover:text-black
                                      ">Read More</button>
                                 </div>

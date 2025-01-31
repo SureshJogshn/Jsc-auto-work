@@ -23,7 +23,7 @@ const About = () => {
 
     return (
         <div className='relative bg-[#333740] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]' id='about'>
-            <h2 className='text-[17px] md:text-3xl font-semibold uppercase text-center mb-4 text-white'>About Us - Dedicated Experts in Automotive Solutions</h2>
+            <h2 className='text-[14px] w-[300px] md:w-[770px] mx-auto md:text-3xl font-semibold uppercase text-center mb-4 text-white'>About Us - Dedicated Experts in Automotive Solutions</h2>
             <div className='flex flex-col md:flex-row items-center justify-center shadow-lg mt-[30px] shadow-md rounded p-2 gap-2'>
                 <div className='relative text-semibold text-white md:w-[1830px] text-[13px] md:text-[18px] flex flex-col gap-3 p-5'>
                     <h6><strong>JSC Shree Chamunda Auto Electric :</strong> Mein Aapka Swagat Hai – Aapka vishwasniya saathi automotive electrical solutions ke liye</h6>

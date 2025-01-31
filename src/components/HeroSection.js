@@ -27,12 +27,12 @@ const HeroSection = () => {
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
             <div className='w-full md:h-[670px] bg-[#2C2F3A] p-5' id='home'>
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
-                 items-center mt-[85px] md:mt-[230px]'>
-                    <div className='flex flex-col text-center md:text-start gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
-                        <img src={logo} alt='logo' className='md:hidden w-[300px] mx-auto' />
-                        <h1 className='text-4xl md:text-6xl font-bold text-white'>
+                 items-center mt-[130px] sm:mt-[85px] md:mt-[230px]'>
+                    <div className='flex flex-col text-center items-center md:text-start gap-4 sm:gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
+                        <img src={logo} alt='logo' className='md:hidden w-[200px] sm:w-[300px] md:w-[600px] mx-auto' />
+                        <h1 className='text-3xl sm:text-4xl md:text-6xl font-bold text-white'>
                             Jai Shree Chamunda Auto Electric Work</h1>
-                        <p className='text-[12px] md:text-3xl text-white font-semibold'>Your Trusted Garage Solution! <span className='text-white' ref={typedElement}></span></p>
+                        <p className='flex flex-col md:flex-row text-[12px] sm:text-[15px] md:text-3xl text-white font-semibold'>Your Trusted Garage Solution! <span className='text-white' ref={typedElement}></span></p>
                     </div>
                     <div className='relative'>
                         <img src={car} alt='' className='absolute inset-0 animate-fadeInOut'
