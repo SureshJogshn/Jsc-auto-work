@@ -3,6 +3,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
+      },
       screens: {
         'xs': '480px',  // Extra small screens (mobile devices)
         'sm': '640px',  // Small screens (tablets)

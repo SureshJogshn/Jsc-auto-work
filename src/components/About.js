@@ -22,10 +22,10 @@ const About = () => {
     });
 
     return (
-        <div className='relative pt-[120px] pb-[120px]' id='about'>
-            <h2 className='text-[14px] md:text-3xl font-semibold uppercase text-center mb-4 text-blue-800'>About Us - Dedicated Experts in Automotive Solutions</h2>
+        <div className='relative bg-[#333740] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]' id='about'>
+            <h2 className='text-[17px] md:text-3xl font-semibold uppercase text-center mb-4 text-white'>About Us - Dedicated Experts in Automotive Solutions</h2>
             <div className='flex flex-col md:flex-row items-center justify-center shadow-lg mt-[30px] shadow-md rounded p-2 gap-2'>
-                <div className='relative text-semibold text-gray-600 md:w-[1830px] text-[13px] md:text-[18px] flex flex-col gap-3 p-5'>
+                <div className='relative text-semibold text-white md:w-[1830px] text-[13px] md:text-[18px] flex flex-col gap-3 p-5'>
                     <h6><strong>JSC Shree Chamunda Auto Electric :</strong> Mein Aapka Swagat Hai – Aapka vishwasniya saathi automotive electrical solutions ke liye</h6>
                     <p>
                         <strong>Jai Shree Chamunda Auto Electric mein hum high-quality automotive electrical services provide karte hain, </strong>
