@@ -9,14 +9,14 @@ const Footer = () => {
         <div className='w-full bg-black py-[50px]  ' id='footer'>
             <div className='max-w-[1200px] p-3 md:p-4 rounded mx-auto flex flex-col gap-[25px] md:gap-[50px] shadow-sm shadow-black'>
                 <div className='flex flex-row justify-between md:gap-3'>
-                    <ul className='flex flex-col gap-2 md:gap-2 w-[400px] md:[20px]'>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[15px] md:text-[19px] font-semibold'><span>🔧</span> Our Services</li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>ECM Repair & Diagnostics</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Car Wiring & Electrical Solutions</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Alternator & Self Motor Repair</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Key Programming & Remote Configuration</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>GPS Device Installation</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[9px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Meter & Dashboard Diagnostics</a></li>
+                    <ul className='flex flex-col gap-5 md:gap-2 w-[400px] md:[20px]'>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[16px] md:text-[19px] font-semibold'><span>🔧</span> Our Services</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>ECM Repair & Diagnostics</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Car Wiring & Electrical Solutions</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Alternator & Self Motor Repair</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Key Programming & Remote Configuration</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>GPS Device Installation</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[10px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Meter & Dashboard Diagnostics</a></li>
                     </ul>
                     <ul className='hidden md:block w-[250px] md:[500px]'>
                         <h2 className='text-[9px] md:text-[19px] text-white font-semibold mb-2'><span>📞 </span>Contact:</h2>
@@ -29,12 +29,12 @@ const Footer = () => {
                     </div>
                     {/* ------ res ---------- */}
                     <ul className='w-[250px] md:[500px]'>
-                        <h2 className='text-[15px] md:text-[19px] text-white font-semibold mb-2'><span>📞 </span>Contact:</h2>
-                        <p className='text-[9px] md:text-[16px] text-white '><span className='md:text-[20px]'>📲 </span> +91 9001323068</p>
-                        <p className='text-[9px] md:text-[16px] text-white '><span className='md:text-[20px]'>📧 </span> jsc.electric@gmail.com</p>
+                        <h2 className='text-[16px] md:text-[19px] text-white font-semibold mb-2'><span>📞 </span>Contact:</h2>
+                        <p className='text-[10px] md:text-[16px] mt-2 text-white '><span className='md:text-[20px]'>📲 </span> +91 9001323068</p>
+                        <p className='text-[10px] md:text-[16px] mt-2 text-white '><span className='md:text-[20px]'>📧 </span> jsc.electric@gmail.com</p>
                     </ul>
                 </div>
-                <div className='flex flex-col gap-3 md:gap-5 jusitfy-center items-center'>
+                <div className='flex flex-col gap-5 md:gap-5 jusitfy-center items-center'>
                     {/* // Responsive */}
                     <div className='text-center md:w-[400px]'>
                         <h2 className='text-[15px] md:text-[19px] text-white font-semibold mb-2'>📍 Address: </h2>
