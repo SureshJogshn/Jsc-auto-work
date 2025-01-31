@@ -35,19 +35,19 @@ function App() {
               cursor-pointer md:hidden block' />
           }
           {/* Responsive */}
-          <ul className={`md:hidden bg-gradient-to-r from-blue-300 fixed top-[90px] h-screen w-full left-0 duration-500
+          <ul className={`md:hidden bg-[#1E201E] fixed top-[90px] h-screen w-full left-0 duration-500
           ${!toggle ? `left-0` : `left-[-100%]`}`}>
-            <li className='border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold 
+            <li className='border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold 
           hover:shadow-2xl'><Link to="/">Home</Link></li>
-            <li className='cursor-pointer border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold
+            <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold
             hover:shadow-2xl'><ScrollLink smooth={true} duration={600} to="services">Services</ScrollLink></li>
-            <li className='cursor-pointer border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold
+            <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold
           hover:shadow-2xl'><ScrollLink smooth={true} duration={600} to="about">About</ScrollLink></li>
-            <li className='cursor-pointer border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold
+            <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold
           hover:shadow-2xl'><ScrollLink smooth={true} duration={600} to="contact">Contact</ScrollLink></li>
-            <li className='cursor-pointer border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold
+            <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold
           hover:shadow-2xl'><ScrollLink smooth={true} duration={600} to="footer">Business Hub</ScrollLink></li>
-            <li className='cursor-pointer border-b-2 border-white p-8 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white hover:text-black font-semibold
+            <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold
           hover:shadow-2xl'><Link to="/login">Login</Link></li>
           </ul>
         </div>
