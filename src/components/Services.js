@@ -42,11 +42,11 @@ const ServiceSlider = () => {
                                 <div className="flex flex-col mt-3 md:gap-8 md:w-[600px] md:p-4 rounded">
                                     <div className="flex flex-col justify-center items-center p-2 text-start rounded">
                                         <h2 className="text-[17px] md:text-2xl text-white font-semibold mb-2"><span></span> Overview</h2>
-                                        <p className="text-white text-[12.9px]  md:text-[20px] text-white">{service.overview}</p>
+                                        <p className="text-white text-center text-[14px]  md:text-[20px] text-white">{service.overview}</p>
                                         <h2 className="text-[18px] md:text-2xl text-white font-semibold mt-3"><span></span> Features</h2>
-                                        <p className="text-white  text-[12.9px]  md:text-[20px]"><span>✔</span> {service.features.first}</p>
-                                        <p className="text-white  text-[12.9px]  md:text-[20px]"><span>✔</span> {service.features.second}</p>
-                                        <button className="border border-white py-2 px-[100px] text-[12.9px] mt-6 md:text-[15px] bg-white 
+                                        <p className="text-white  text-[13px]  md:text-[20px]"><span>✔</span> {service.features.first}</p>
+                                        <p className="text-white  text-[13px]  md:text-[20px]"><span>✔</span> {service.features.second}</p>
+                                        <button className="border border-white py-2 px-[50px] md:px-[100px] text-[12.9px] mt-6 md:text-[15px] bg-white 
                                         rounded text-black font-semibold hover:text-black hover:bg-gray-300
                                      ">Read More</button>
                                     </div>
@@ -60,13 +60,13 @@ const ServiceSlider = () => {
             {/* Navigation Arrows */}
             <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ◀
             </button>
             <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ▶
             </button>
