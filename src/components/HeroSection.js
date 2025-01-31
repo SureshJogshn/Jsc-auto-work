@@ -34,12 +34,12 @@ const HeroSection = () => {
                         <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-white'>
                             Jai Shree Chamunda Auto Electric Work</h1>
                         <div>
-                            <p className='flex text-[14px] sm:text-[15px] md:text-3xl text-white font-semibold'>Your Trusted Garage Solution!</p>
+                            <p className='flex text-[18px] sm:text-[15px] tracking-wide md:text-3xl text-white font-semibold'>Your Trusted Garage Solution!</p>
                             <p className='text-white'> <span className='text-white' ref={typedElement}></span></p>
                         </div>
                         <ul className='flex flex-col gap-3 mt-3'>
-                            <li className='border border-white rounded-lg text-white text-center w-[250px] py-2'><Link>Read More</Link></li>
-                            <li className='border border-white rounded-lg text-white text-center w-[250px] py-2'><Link>Sign in</Link></li>
+                            <li className='border border-white text-[14px] bg-white hover:bg-gray-300 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'><Link>Read More</Link></li>
+                            <li className='border border-white text-[14px] bg-white hover:bg-gray-300 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'><Link>Sign in</Link></li>
                         </ul>
                     </div>
                     <div className='relative hidden md:block'>
