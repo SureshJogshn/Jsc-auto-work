@@ -30,7 +30,7 @@ const HeroSection = () => {
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
                     <div className='flex flex-col text-center items-center md:text-start gap-7 sm:gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
-                        <img src={logo} alt='logo' className='md:hidden w-[250px] sm:w-[300px] md:w-[600px] mx-auto' />
+                        <img src={logo} alt='logo' className='md:hidden w-[300px] sm:w-[330px] md:w-[600px] mx-auto' />
                         <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-white'>
                             Jai Shree Chamunda Auto Electric Work</h1>
                         <div>
