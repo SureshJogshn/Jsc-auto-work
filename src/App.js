@@ -13,10 +13,10 @@ function App() {
   return (
     <>
       <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-[#2C2F3A]'>
-        <div className='max-w-[1240px] mx-auto flex items-center p-5 gap-[100px] justify-between md:justify-around'>
+        <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
           <div className=' flex items-center'>
             <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-            <div className='text-[14px] md:text-[25px] uppercase text-white font-bold'> Jsc Auto Electric </div>
+            <div className='text-[17px] md:text-[25px] uppercase text-white font-bold'> Jsc Auto Electric </div>
           </div>
           <ul className='hidden md:flex gap-9 text-[21px] text-white'>
             <li ><Link className='hover:border-b-2 border-[#FBFBFB]' to="/">Home</Link></li>
@@ -29,9 +29,9 @@ function App() {
           {
 
             toggle ?
-              <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-2xl text-white duration-100
+              <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-3xl text-white duration-100
               cursor-pointer md:hidden block' />
-              : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-2xl text-white duration-100
+              : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-3xl text-white duration-100
               cursor-pointer md:hidden block' />
           }
           {/* Responsive */}
