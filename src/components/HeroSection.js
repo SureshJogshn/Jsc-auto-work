@@ -8,8 +8,12 @@ import ContactUs from './ContactUs';
 import Footer from './Footer';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+
 const HeroSection = () => {
     const typedElement = useRef(null);
+    const navigate = useNavigate();
+
     useEffect(() => {
         const typedOptions = {
             strings: ["ECM Diagnostics", "Key Programming", "Remote Services", "Self-Starter Repair", "Alternator Repair",
@@ -38,8 +42,12 @@ const HeroSection = () => {
                             <p className='text-white'> <span className='text-white' ref={typedElement}></span></p>
 
                             <ul className='flex flex-col gap-3 mt-8'>
-                                <li className='border border-white text-[14px] bg-white hover:bg-gray-300 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'><Link>Read More</Link></li>
-                                <li className='border border-white text-[14px] bg-white hover:bg-gray-300 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'><Link>Sign in</Link></li>
+                                <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-white hover:bg-gray-300
+                                 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
+                                    Read More</button>
+                                <li className='border border-white text-[14px] bg-white hover:bg-gray-300
+                                 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
+                                    <Link>Sign in</Link></li>
                             </ul>
                         </div>
                     </div>

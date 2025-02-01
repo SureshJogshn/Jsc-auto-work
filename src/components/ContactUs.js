@@ -12,17 +12,17 @@ export default function ContactUs() {
                     mx-auto border-white rounded-full' />
                     <div className='text-white md:w-[500px] mx-auto bg-gradient-to-r mt-1 text-black from-blue-500 p-2 rounded'>
                         <p>Phone: +91 9001323068</p>
-                        <p>Email: jsc@gmail.com</p>
-                        <p>Address: Near Head Post Office, Shivaji Nagar, Jalore - 344002 (Rajasthan)</p>
+                        <p>Email: nareshjogsan900@gmail.com</p>
+                        <p>Address: J.D. Complex III, Fes, Bhinmal Road, Jalore (Rajasthan) - 343001</p>
                         <p>Working Hours: Monday to Saturday, 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div className='md:w-[2000px] h-[200px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
+                <div className='md:w-[2000px] p-4 h-[200px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
                  overflow-hidden text-[15px] md:text-[18px] text-white rounded md:py-[10px] mt-[20px]'>
                     <p className='mt-3'>
-                        Hello, main Naresh Kumar hoon, aur JSC Electric mein hum aapki car-related electrical
-                        problems ko solve karne ke liye hamesha ready hain. Agar aapko car wiring, ECM diagnostics,
-                        alternator servicing, GPS device installation, key programming, ya kisi bhi tarah ki
+                        Hello, main <strong>Naresh Kumar</strong> hoon, aur <strong>JSC Auto Electric</strong> mein hum aapki car-related electrical
+                        problems ko solve karne ke liye hamesha ready hain. Agar aapko <strong>car wiring, ECM diagnostics,
+                            alternator servicing, GPS device installation, key programming </strong> ,  ya kisi bhi tarah ki
                         car repair ki zarurat ho, toh humari expert team aapke liye reliable aur fast solutions dene ke liye tayaar hai.</p>
                     <p className='mt-3'>
                         Agar aapko humari services ke baare mein jaankari chahiye ya appointment book karni ho,

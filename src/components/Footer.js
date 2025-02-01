@@ -31,14 +31,14 @@ const Footer = () => {
                     <ul className='w-[250px] md:[500px]'>
                         <h2 className='text-[16px] md:text-[19px] text-white font-semibold mb-2'><span>📞 </span>Contact:</h2>
                         <p className='text-[10px] md:text-[16px] mt-2 text-white '><span className='md:text-[20px]'>📲 </span> +91 9001323068</p>
-                        <p className='text-[10px] md:text-[16px] mt-2 text-white '><span className='md:text-[20px]'>📧 </span> jsc.electric@gmail.com</p>
+                        <p className='text-[10px] md:text-[16px] mt-2 text-white '><span className='md:text-[20px]'>📧 </span> nareshjogsan900@gmail.com</p>
                     </ul>
                 </div>
                 <div className='flex flex-col gap-5 md:gap-5 jusitfy-center items-center'>
                     {/* // Responsive */}
                     <div className='text-center md:w-[400px]'>
                         <h2 className='text-[15px] md:text-[19px] text-white font-semibold mb-2'>📍 Address: </h2>
-                        <p className='text-white text-[12px] md:text-[19px]'> Near Head Post Office, Shivaji Nagar, Jalore - 344002 (Rajasthan)</p>
+                        <p className='text-white text-[12px] md:text-[19px]'> J.D. Complex III, Fes, Bhinmal Road, Jalore (Rajasthan) - 343001</p>
                     </div>
                     <ul className='flex gap-5 justify-center items-center'>
                         <li className='corsor-pointer text-white text-[14px] md:text-[19px] font-semibold'>📱 Follow Us:</li>
