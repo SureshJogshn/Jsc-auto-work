@@ -8,6 +8,8 @@ import { AiOutlineMenu } from "react-icons/ai";
 import { useState } from 'react';
 import logo from './assets/logo.png'
 import ReadMore from './pages/ReadMore';
+import Register from './pages/Register';
+import RaadServices from './pages/RaadServices';
 
 function App() {
   const [toggle, setToggle] = useState(true);
@@ -56,7 +58,9 @@ function App() {
       <Routes>
         <Route path='/' element={<HeroSection />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/read' element={<ReadMore />} />
+        <Route path='/readserivce' element={<RaadServices />} />
       </Routes>
     </>
   );

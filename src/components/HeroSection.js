@@ -47,7 +47,7 @@ const HeroSection = () => {
                                     Read More</button>
                                 <li className='border border-white text-[14px] bg-white hover:bg-gray-300
                                  font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
-                                    <Link>Sign in</Link></li>
+                                    <Link to="/register">Sign in</Link></li>
                             </ul>
                         </div>
                     </div>

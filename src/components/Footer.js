@@ -11,12 +11,12 @@ const Footer = () => {
                 <div className='flex flex-row justify-around md:gap-3'>
                     <ul className='flex flex-col gap-5 md:gap-2 md:w-[20px]'>
                         <li className='corsor-pointer text-white hover:text-green-500 text-[17px] md:text-[19px] font-semibold'><span>🔧</span> Our Services</li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>ECM Repair & Diagnostics</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Car Wiring & Electrical Solutions</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Alternator & Self Motor Repair</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Key Programming & Remote Configuration</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>GPS Device Installation</a></li>
-                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'><a href="/home"><span className='text-green-400'>✔ </span>Meter & Dashboard Diagnostics</a></li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>ECM Repair & Diagnostics</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Car Wiring & Electrical Solutions</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Alternator & Self Motor Repair</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Key Programming & Remote Configuration</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>GPS Device Installation</li>
+                        <li className='corsor-pointer text-white hover:text-green-500 text-[13px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Meter & Dashboard Diagnostics</li>
                     </ul>
                     <ul className='hidden md:block w-[250px] md:[500px] '>
                         <h2 className='text-[9px] md:text-[19px] text-white font-semibold mb-2'><span>📞 </span>Contact:</h2>
