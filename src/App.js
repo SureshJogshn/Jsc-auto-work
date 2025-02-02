@@ -32,9 +32,9 @@ function App() {
           {
 
             toggle ?
-              <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-3xl text-white duration-100
+              <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl text-white duration-100
               cursor-pointer md:hidden block' />
-              : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-3xl text-white duration-100
+              : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl text-white duration-100
               cursor-pointer md:hidden block' />
           }
           {/* Responsive */}
