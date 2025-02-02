@@ -7,10 +7,10 @@ import { FaWhatsapp } from "react-icons/fa";
 const Footer = () => {
     return (
         <div className='w-full bg-black py-[50px]' id='footer'>
-            <h1 className='corsor-pointer text-white hover:text-green-500 text-[16px] ml-5 md:text-[19px] font-semibold'><span>🔧</span> Our Services</h1>
+            <h1 className='corsor-pointer text-white hover:text-green-500 text-[16px] ml-2 md:text-[19px] font-semibold'><span>🔧</span> Our Services</h1>
             <div className='max-w-[1200px] p-3 md:p-4 rounded mx-auto flex flex-col gap-9 md:gap-[50px] shadow-sm shadow-black'>
                 <div className='flex flex-row justify-around md:gap-3'>
-                    <ul className='flex flex-row md:flex-col gap-2 md:gap-2 md:w-[20px]'>
+                    <ul className='flex flex-row justify-between gap-5 md:flex-col md:gap-2 md:w-[20px]'>
                         <ul>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Diagnostics</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Electrical Solutions</li>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className='flex flex-col gap-4 md:gap-5 justify-center jusitfy-center items-center'>
-                    <h2 className='text-[16px] md:text-[19px] text-white font-semibold'><span>📞 </span>Contact:</h2>
+                    <h2 className='text-[15px] md:text-[19px] text-white font-semibold'><span>📞 </span>Contact:</h2>
                     <ul className='flex flex-row gap-2 items-center md:[500px] '>
                         <p className='text-[13px] md:text-[16px] text-white '><span className='md:text-[20px]'>📲 </span> +91 9001323068</p>
                         <p className='text-[13px] md:text-[16px] text-white '><span className='md:text-[20px]'>📧 </span> nareshjogsan900@gmail.com</p>
