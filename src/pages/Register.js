@@ -89,7 +89,7 @@ export default function Register() {
                 font-semibold text-[14px] text-black py-[5px] rounded-lg'>Sign in</button>
 
                 </div>
-                <p className='text-gray-400 text-[16px]'>----------------- OR -----------------</p>
+                <p className='text-gray-400 text-[16px] text-center'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
                     className='border-2 border-[#3674B5] text-[14px] font-semibold text-red-700 py-2 px-10
                     rounded-lg flex flex-row items-center hover:bg-[#578FCA]
