@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithRedirect } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
@@ -42,7 +42,7 @@ export default function Register() {
     const googleSignup = async (event) => {
         event.preventDefault();
         try {
-            const result = await signInWithPopup(
+            const result = await signInWithRedirect(
                 auth,
                 provider,
             );
