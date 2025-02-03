@@ -7,7 +7,6 @@ import About from './About';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
 import logo from '../assets/logo.png';
-import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
@@ -45,9 +44,6 @@ const HeroSection = () => {
                                 <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-white hover:bg-gray-300
                                  font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
                                     Read More</button>
-                                <li className='border border-white text-[14px] bg-white hover:bg-gray-300
-                                 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
-                                    <Link to="/register">Sign Up</Link></li>
                             </ul>
                         </div>
                     </div>

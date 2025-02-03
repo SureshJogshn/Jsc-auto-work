@@ -37,7 +37,7 @@ function App() {
     <>
       <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-[#2C2F3A]'>
         <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
-          <div className=' flex items-center gap-4'>
+          <div className=' flex items-center'>
             {
 
               toggle ?
