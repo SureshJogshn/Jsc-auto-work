@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/static/css/main.6f76c801.css",
+    "main.js": "/static/js/main.24120c7f.js",
+    "static/media/logo.png": "/static/media/logo.5aa753f53b263f55ae61.png",
+    "static/media/speedometer.png": "/static/media/speedometer.8528bd8920822975377a.png",
+    "static/media/gps.png": "/static/media/gps.f6bb15f751ff99583717.png",
+    "static/media/06-jsc.jpg": "/static/media/06-jsc.95b687215fd973628e57.jpg",
+    "static/media/03-jsc.jpg": "/static/media/03-jsc.d4bf5c26ada1c00d532f.jpg",
+    "static/media/02-jsc.jpg": "/static/media/02-jsc.78ff21eb5208e97bccf0.jpg",
+    "static/media/8-jsc.jpg": "/static/media/8-jsc.41bdf94f255903ac6d56.jpg",
+    "static/media/jsc-3.jpg": "/static/media/jsc-3.52beb7b6d150f22090d6.jpg",
+    "static/media/05-jsc.jpg": "/static/media/05-jsc.92a627f4f75138e777cd.jpg",
+    "static/media/jsc-2.jpg": "/static/media/jsc-2.1163a70d579fb7ecef75.jpg",
+    "static/media/jsc-4.jpg": "/static/media/jsc-4.a2b8d1c937cdcbbc3c5d.jpg",
+    "static/media/carmeter.png": "/static/media/carmeter.d4fc54647ade6e77fc36.png",
+    "static/media/cpu.png": "/static/media/cpu.235f21e628e5e1b85d6b.png",
+    "static/media/car.png": "/static/media/car.da32b34d412fb483d05d.png",
+    "static/media/CEO.jpg": "/static/media/CEO.a74bcd51ad2ececf9773.jpg",
+    "static/media/mec.png": "/static/media/mec.0d416347a2cbda34a53f.png",
+    "static/media/key.png": "/static/media/key.18f5569611d388087f51.png",
+    "static/media/vehicle.png": "/static/media/vehicle.0a3c79bdcda52c4fa0f5.png",
+    "static/media/alternator.png": "/static/media/alternator.acc1218d5835bc0ab1bc.png",
+    "static/media/self.png": "/static/media/self.cf1ca3003e8ae9f658fb.png",
+    "index.html": "/index.html",
+    "main.6f76c801.css.map": "/static/css/main.6f76c801.css.map",
+    "main.24120c7f.js.map": "/static/js/main.24120c7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f76c801.css",
+    "static/js/main.24120c7f.js"
+  ]
+}
