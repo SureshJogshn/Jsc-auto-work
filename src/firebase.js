@@ -1,5 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+
+// import { getFirestore } from "firebase/firestore"; // additional sata store
 
 const firebaseConfig = {
     apiKey: "AIzaSyDfffh92uWo4NYk6erXsb1izJn28-XGUGY",
@@ -12,4 +14,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+export { auth, provider }
