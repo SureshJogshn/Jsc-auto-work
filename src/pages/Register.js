@@ -64,19 +64,19 @@ export default function Register() {
             <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white shadow-sm shadow-black mt-[20px]'>
 
                 <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
-                    <MdEmail className='text-gray-700 text-[18px]' />
+                    <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
                         className='outline-none  p-1 pl-3 ' placeholder='Email Id' />
                 </div>
 
                 <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
-                    <FaUserLock className='text-gray-700 text-[18px]' />
+                    <FaUserLock className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
                         className='outline-none p-1 pl-3' placeholder='Password' required />
                 </div>
 
                 <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
-                    <MdLockPerson className='text-gray-700 text-[18px]' />
+                    <MdLockPerson className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
                         className='outline-none p-1 pl-3' placeholder='Confirm Password' required />
                 </div>
