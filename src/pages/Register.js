@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
-import HeroSection from '../components/HeroSection';
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
 import { MdLockPerson } from "react-icons/md";
@@ -33,14 +32,15 @@ export default function Register() {
             setRegisterEmail("");
             setRegisterPassword("");
             setRegisterConfirmPassword("");
-            <HeroSection />
+            navigate("/home");
         } catch (error) {
             console.log(error.message);
             alert("Register failed");
         }
     }
 
-    const googleSignup = async () => {
+    const googleSignup = async (event) => {
+        event.preventDefault();
         try {
             const result = await signInWithPopup(
                 auth,
@@ -48,6 +48,7 @@ export default function Register() {
             );
             console.log(result);
             alert("google signing");
+            navigate("/home");
         } catch (error) {
             alert("google signing failed");
         }

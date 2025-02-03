@@ -21,12 +21,14 @@ export default function Login() {
             );
             console.log(user);
             alert("login successfully");
+            navigate("/home");
         } catch (error) {
             alert("login failed");
         }
     }
 
-    const googleSignup = async () => {
+    const googleSignup = async (event) => {
+        event.preventDefault();
         try {
             const result = await signInWithPopup(
                 auth,
@@ -34,6 +36,7 @@ export default function Login() {
             );
             console.log(result);
             alert("Signing Successfuly");
+            navigate("/home");
         } catch (error) {
             console.log(error.meassage);
             alert("Signing failed!");
