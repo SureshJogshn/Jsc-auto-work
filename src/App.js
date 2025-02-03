@@ -21,7 +21,7 @@ function App() {
             {
 
               toggle ?
-                <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl text-white duration-100 cursor-pointer md:hidden block' />
+                <AiOutlineMenu onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl hover:text-gray-500 text-white duration-100 cursor-pointer md:hidden block' />
                 : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl text-white duration-100 cursor-pointer md:hidden block' />
             }
             <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
@@ -35,7 +35,7 @@ function App() {
             <li ><ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="footer">Business Hub</ScrollLink></li>
             <li ><ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="/login">Login</ScrollLink></li>
           </ul>
-          <Link to="/login" className='hover:border-b-2 border-[#FBFBFB] cursor-pointer text-white'>Login</Link>
+          <Link to="/login" className='hover:text-green-500 text-[15px] border-[#FBFBFB] cursor-pointer text-white'>Login</Link>
           {/* Responsive */}
           <ul className={`md:hidden bg-[#1E201E] fixed top-[85px] h-screen w-full left-0 duration-500
           ${!toggle ? `left-0` : `left-[-100%]`}`}>
