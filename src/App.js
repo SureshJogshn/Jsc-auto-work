@@ -45,7 +45,7 @@ function App() {
                 : <AiOutlineClose onClick={() => setToggle(!toggle)} className='text-2xl md:text-3xl text-white duration-100 cursor-pointer md:hidden block' />
             }
             <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-            <div className='text-xs sm:text-sm md:text-lg lg:text-xl uppercase text-white font-bold'> Jsc Auto Electric </div>
+            <div className='text-xs sm:text-sm md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'> Jsc Auto Electric </div>
           </div>
           <ul className='hidden md:flex gap-9 text-xs sm:text-sm md:text-lg lg:text-xl text-white'>
             <li ><Link className='hover:border-b-2 border-[#FBFBFB]' to="/home">Home</Link></li>
