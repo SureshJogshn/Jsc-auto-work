@@ -59,7 +59,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
         <Route path='/read' element={<ReadMore />} />
-        <Route path='/readserivce' element={<RaadServices />} />
+        <Route path='/readserivce' element={<RaadServices />} />  tu kakz ke full ki ha raat ki landon kaha ganga paani  ypny
       </Routes>
     </>
   );
