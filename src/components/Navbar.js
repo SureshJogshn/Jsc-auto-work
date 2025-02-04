@@ -46,7 +46,7 @@ export default function Navbar({ user }) {
                         />
                     }
                     <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-                    <div className='text-[16px] md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'>
+                    <div className='text-[18px] md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'>
                         <span className='text-orange-400'>J</span> <span className='text-white'>S</span> <span className='text-green-400'>c</span>
                     </div>
                 </div>
@@ -78,7 +78,7 @@ export default function Navbar({ user }) {
                 }
 
                 {/* Responsive menu */}
-                <ul className={`md:hidden bg-[#1E201E] fixed top-[85px] h-screen w-full left-0 duration-500 ${!toggle ? 'left-0' : 'left-[-100%]'}`}>
+                <ul className={`md:hidden bg-[#1E201E] fixed top-[80px] h-screen w-full left-0 duration-500 ${!toggle ? 'left-0' : 'left-[-100%]'}`}>
                     <li className='border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
                         <RouterLink to="/home">Home</RouterLink>
                     </li>
