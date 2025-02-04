@@ -62,7 +62,7 @@ export default function Login() {
 
     return (
         <div className='w-full h-screen pt-[80px]'>
-            <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
+            <div className='text-center  mx-auto text-white mt-[20px] text-[14px]
             bg-[#3674B5] uppercase w-[270px] font-semibold p-2'>
                 <h1>Welcome Back</h1>
                 <h1>JSC Auto Electric Work's</h1>

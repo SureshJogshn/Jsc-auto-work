@@ -69,7 +69,7 @@ export default function Register() {
     }
 
     return (
-        <div className='w-full h-screen pt-[80px]'>
+        <div className='w-full h-screen pt-[20px]'>
             <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
             bg-[#3674B5] uppercase w-[300px] font-semibold p-2'>
                 <h1>Welcome</h1>
