@@ -68,28 +68,28 @@ export default function Register() {
                 gap-2 px-2 py-[4px] rounded'>
                     <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
-                        className='outline-none  p-1 pl-3 ' placeholder='Email id' />
+                        className='outline-none text-[16px]' placeholder='Email id' />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <IoMdPhonePortrait className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
-                        className='outline-none  p-1 pl-3 ' placeholder='Phone number' />
+                        className='outline-none text-[16px]' placeholder='Phone number' />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <FaUserLock className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
-                        className='outline-none p-1 pl-3' placeholder='Password' required />
+                        className='outline-none text-[16px]' placeholder='Password' required />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <MdLockPerson className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
-                        className='outline-none p-1 pl-3' placeholder='Confirm password' required />
+                        className='outline-none text-[16px]' placeholder='Confirm password' required />
                 </div>
 
                 <div className='flex flex-col gap-2 mt-2'>
@@ -104,8 +104,8 @@ export default function Register() {
                 <p className='text-gray-400 text-[16px] text-center'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
                     className='border-2 border-[#3674B5] text-[14px] font-semibold text-red-700 py-2 px-10
-                    rounded-lg flex flex-row items-center hover:bg-[#578FCA]
-                     hover:text-white justify-evenly'><FcGoogle className='text-[18px]' />Sign up with Google</button>
+                    rounded-full flex flex-row items-center hover:bg-[#578FCA]
+                     hover:text-white justify-evenly '><FcGoogle className='text-[18px]' />Sign up with Google</button>
             </form>
         </div>
     )
