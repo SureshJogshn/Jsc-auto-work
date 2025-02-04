@@ -18,7 +18,8 @@ const HeroSection = () => {
     useEffect(() => {
         const typedOptions = {
             strings: ["ECM Diagnostics", "Key Programming", "Remote Services", "Self-Starter Repair", "Alternator Repair",
-                "Car Wiring Solutions", "GPS Device Installation", "Dashboard Meter Repair"],
+                "Car Wiring Solutions", "GPS Device Installation", "Dashboard Meter Repair", "ECM (Engine Control Module)",
+                "Cluster Meter Repair", "EPS (Electronic Power Steering) Repair", "BCM (Body Control Module) Repair", "JSC CAN Box"],
             typeSpeed: 50,
             backSpeed: 30,
             loop: true

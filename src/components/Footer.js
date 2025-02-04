@@ -12,12 +12,15 @@ const Footer = () => {
                 <div className='flex flex-row justify-around md:gap-3'>
                     <ul className='flex flex-row justify-between gap-5 md:flex-col md:gap-2 md:w-[20px]'>
                         <ul className='flex flex-col gap-2'>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>JSC CAN Box</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Diagnostics</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Electrical Solutions</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>ECM Repair</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Car Wiring</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Self Motor Repair</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Remote Configuration</li>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Cluster Meter Repair</li>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>EPS Repair</li>
                         </ul>
                         <ul className='flex flex-col gap-2'>
 
@@ -26,6 +29,9 @@ const Footer = () => {
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>GPS Device Installation</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Key Programming</li>
                             <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Alternator Repair</li>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>BCM Repair</li>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>Key Programming</li>
+                            <li className='corsor-pointer text-white hover:text-green-500 text-[12.5px] md:text-[18px]'> <span className='text-green-400'>✔ </span>ECM (Engine Control Module)</li>
                         </ul>
                     </ul>
                     <div className='hidden md:block md:w-[400px]'>
