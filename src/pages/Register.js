@@ -57,11 +57,11 @@ export default function Register() {
     return (
         <div className='w-full h-screen pt-[80px]'>
             <div className='text-center  mx-auto text-white mt-[40px] text-[18px]
-            shadow-sm shadow-black bg-[#3674B5] uppercase w-[300px] font-semibold p-2'>
+            bg-[#3674B5] uppercase w-[300px] font-semibold p-2'>
                 <h1>Welcome</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white shadow-sm shadow-black mt-[20px]'>
+            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white mt-[20px]'>
 
                 <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
                     <MdEmail className='text-gray-700 text-[25px] ' />
