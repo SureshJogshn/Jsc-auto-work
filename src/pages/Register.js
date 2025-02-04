@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
 import { MdLockPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
+import { IoMdPhonePortrait } from "react-icons/io";
 
 
 export default function Register() {
@@ -63,22 +64,32 @@ export default function Register() {
             </div>
             <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white mt-[20px]'>
 
-                <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                gap-2 px-2 py-[4px] rounded'>
                     <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
-                        className='outline-none  p-1 pl-3 ' placeholder='Email Id' />
+                        className='outline-none  p-1 pl-3 ' placeholder='Email id' />
                 </div>
 
-                <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                gap-2 px-2 py-[4px] rounded'>
+                    <IoMdPhonePortrait className='text-gray-700 text-[25px] ' />
+                    <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
+                        className='outline-none  p-1 pl-3 ' placeholder='Phone number' />
+                </div>
+
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                gap-2 px-2 py-[4px] rounded'>
                     <FaUserLock className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
                         className='outline-none p-1 pl-3' placeholder='Password' required />
                 </div>
 
-                <div className='border-2 border-gray-300 rounded-lg flex justify-center items-center'>
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                gap-2 px-2 py-[4px] rounded'>
                     <MdLockPerson className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
-                        className='outline-none p-1 pl-3' placeholder='Confirm Password' required />
+                        className='outline-none p-1 pl-3' placeholder='Confirm password' required />
                 </div>
 
                 <div className='flex flex-col gap-2 mt-2'>

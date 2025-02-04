@@ -52,14 +52,14 @@ export default function Login() {
             </div>
             <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white'>
 
-                <div className='flex flex-row justify-between items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <MdEmail className="text-2xl sm:text-2xl" />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[16px]' placeholder='Email Id' />
                 </div>
 
-                <div className='flex flex-row justify-between items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <FaUserLock className="text-2xl sm:text-2xl" />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
@@ -71,7 +71,7 @@ export default function Login() {
                          border-2 border-white text-white hover:bg-[#578FCA]
                         font-semibold text-[14px] text-black py-2 rounded'>Sign In</button>
 
-                    <button onClick={() => navigate("/register")} className='border-2 border-[#3674B5] text-[#3674B5] 
+                    <button onClick={() => navigate("/")} className='border-2 border-[#3674B5] text-[#3674B5] 
                         font-semibold text-[14px] hover:text-black py-[5px] rounded '>Sign Up</button>
                 </div>
                 <p className='text-gray-400 text-center text-[16px]'>----------------- OR -----------------</p>
