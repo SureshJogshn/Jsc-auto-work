@@ -1,0 +1,92 @@
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom'; // For routing between pages
+import { Link as ScrollLink } from 'react-scroll';  // For scrolling to sections
+import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
+import logo from '../assets/logo.png';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
+
+export default function Navbar({ user }) {
+    const [toggle, setToggle] = useState(true);
+    const navigate = useNavigate();
+
+    const logout = async () => {
+        try {
+            await signOut(auth);
+            alert("Logout Successfully");
+            window.location.reload();
+            navigate("/login");
+        } catch (error) {
+            alert("try again");
+        }
+    }
+
+    return (
+        <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-[#2C2F3A]'>
+            <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
+                <div className='flex items-center'>
+                    {toggle ?
+                        <AiOutlineMenu
+                            onClick={() => setToggle(!toggle)}
+                            className='text-2xl md:text-3xl hover:text-gray-500 text-white duration-100 cursor-pointer md:hidden block'
+                        /> :
+                        <AiOutlineClose
+                            onClick={() => setToggle(!toggle)}
+                            className='text-2xl md:text-3xl text-white duration-100 cursor-pointer md:hidden block'
+                        />
+                    }
+                    <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
+                    <div className='text-xs sm:text-sm md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'> Jsc Auto Electric </div>
+                </div>
+                {
+                    user && (
+                        <>
+                            <p className='text-white'>{user.displayName}</p>
+                            <button onClick={logout} className='text-white'>Logout</button>
+                        </>
+                    )
+                }
+                <ul className='hidden md:flex gap-9 text-xs sm:text-sm md:text-lg lg:text-xl text-white'>
+                    <li>
+                        <RouterLink className='hover:border-b-2 border-[#FBFBFB]' to="/home">Home</RouterLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="services">Services</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="about">About</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="contact">Contact</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="footer">Business Hub</ScrollLink>
+                    </li>
+                </ul>
+
+                {/* Responsive menu */}
+                <ul className={`md:hidden bg-[#1E201E] fixed top-[85px] h-screen w-full left-0 duration-500 ${!toggle ? 'left-0' : 'left-[-100%]'}`}>
+                    <li className='border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <RouterLink to="/home">Home</RouterLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="services">Services</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="about">About</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="contact">Contact</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="footer">Business Hub</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <RouterLink to="/login">Login</RouterLink>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    );
+}

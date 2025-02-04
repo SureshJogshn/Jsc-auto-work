@@ -7,11 +7,13 @@ import About from './About';
 import ContactUs from './ContactUs';
 import Footer from './Footer';
 import logo from '../assets/logo.png';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const HeroSection = () => {
     const typedElement = useRef(null);
     const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const typedOptions = {
@@ -26,6 +28,15 @@ const HeroSection = () => {
             typed.destroy()
         };
     }, []);
+
+    if (location.pathname === "/login" || location.pathname === "/") {
+        return null;
+    }
+
+    if (location.pathname === "/login" || location.pathname === "/") {
+        return null;
+    }
+
     return (
         <>
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
@@ -55,6 +66,7 @@ const HeroSection = () => {
                     </div>
                 </div>
             </div>
+            <Navbar />
             <Services />
             <About />
             <ContactUs />

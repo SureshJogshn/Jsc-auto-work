@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { createUserWithEmailAndPassword, signInWithRedirect } from 'firebase/auth';
-import { auth, provider } from '../firebase';
+import { auth, provider, db } from '../firebase';
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
 import { MdLockPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { IoMdPhonePortrait } from "react-icons/io";
+import { setDoc, doc } from 'firebase/firestore';
 
 
 export default function Register() {
+    const [registerUser, setRegisterUser] = useState("");
     const [registerEmail, setRegisterEmail] = useState("");
+    const [registerPhone, setRegisterPhone] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
     const navigate = useNavigate();
@@ -22,13 +25,23 @@ export default function Register() {
             return;
         }
         try {
-            const user = await createUserWithEmailAndPassword(
+            const userCreate = await createUserWithEmailAndPassword(
                 // Register user with email and password
                 auth,
                 registerEmail,
                 registerPassword,
+                //save data
             );
-            console.log(user);
+            const user = userCreate.user;
+            await setDoc(doc(db, "users", user.uid), {
+                registerUser: registerEmail,
+                registerEmail: registerEmail,
+                registerPhone: registerPhone,
+                registerPassword: registerPassword,
+                uid: user.uid,
+            })
+
+            console.log(userCreate);
             alert("Register Successfully");
             setRegisterEmail("");
             setRegisterPassword("");
@@ -57,12 +70,18 @@ export default function Register() {
 
     return (
         <div className='w-full h-screen pt-[80px]'>
-            <div className='text-center  mx-auto text-white mt-[40px] text-[18px]
+            <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
             bg-[#3674B5] uppercase w-[300px] font-semibold p-2'>
                 <h1>Welcome</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white mt-[20px]'>
+            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white'>
+                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                gap-2 px-2 py-[4px] rounded'>
+                    <MdEmail className='text-gray-700 text-[25px] ' />
+                    <input onChange={(event) => setRegisterUser(event.target.value)} value={registerUser}
+                        className='outline-none text-[16px]' placeholder='Username' />
+                </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
@@ -74,7 +93,7 @@ export default function Register() {
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
                     <IoMdPhonePortrait className='text-gray-700 text-[25px] ' />
-                    <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
+                    <input onChange={(event) => setRegisterPhone(event.target.value)} value={registerPhone}
                         className='outline-none text-[16px]' placeholder='Phone number' />
                 </div>
 

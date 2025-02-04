@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { signInWithEmailAndPassword, signInWithRedirect } from 'firebase/auth'
+import React, { useEffect, useState } from 'react'
+import { signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth'
 import { auth, provider } from '../firebase'
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
@@ -27,21 +27,38 @@ export default function Login() {
         }
     }
 
-    const googleSignup = async (event) => {
-        event.preventDefault();
-        try {
-            const result = await signInWithRedirect(
-                auth,
-                provider
-            );
-            console.log(result);
-            alert("Signing Successfuly");
-            navigate("/home");
-        } catch (error) {
-            console.log(error.meassage);
-            alert("Signing failed!");
-        }
+    useEffect(() => {
+        getRedirectResult(auth)
+            .then((result) => {
+                if (result?.user) {
+                    console.log("Login Sucessful...", result.user);
+                    navigate("/home");
+                }
+            })
+            .catch((error) => {
+                console.log("error", error.message);
+            })
+    }, [navigate]);
+
+    const googleSignup = () => {
+        signInWithRedirect(auth, provider);
     }
+
+    // const googleSignup = async (event) => {
+    //     event.preventDefault();
+    //     try {
+    //         const result = await signInWithRedirect(
+    //             auth,
+    //             provider
+    //         );
+    //         console.log(result);
+    //         alert("Signing Successfuly");
+    //         navigate("/home");
+    //     } catch (error) {
+    //         console.log(error.meassage);
+    //         alert("Signing failed!");
+    //     }
+    // }
 
     return (
         <div className='w-full h-screen pt-[80px]'>
