@@ -63,11 +63,11 @@ export default function Login() {
     return (
         <div className='w-full h-screen pt-[80px]'>
             <div className='text-center  mx-auto text-white mt-[20px] text-[14px]
-            bg-[#3674B5] uppercase w-[270px] font-semibold p-2'>
+            bg-[#3674B5] uppercase w-[304px] shadow-sm shadow-black font-semibold p-2'>
                 <h1>Welcome Back</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white'>
+            <form className='flex flex-col gap-4 p-6 py-[20px] mt-2 shadow-sm shadow-black w-[300px] h-[420px] mx-auto rounded bg-white'>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
