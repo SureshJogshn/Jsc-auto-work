@@ -46,7 +46,7 @@ export default function Navbar({ user }) {
                         />
                     }
                     <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-                    <div className='text-xs sm:text-sm md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'> Jsc Auto Electric </div>
+                    <div className='text-xs sm:text-sm md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'> Jsc</div>
                 </div>
 
                 <ul className='hidden md:flex gap-9 text-xs sm:text-sm md:text-lg lg:text-xl text-white'>
