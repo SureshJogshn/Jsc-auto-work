@@ -73,7 +73,7 @@ export default function Login() {
                 gap-2 px-2 py-[4px] rounded'>
                     <MdEmail className="text-2xl sm:text-3xl md:text-4xl" />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
-                        className='outline-none text-[16px]' placeholder='Email Id' />
+                        className='outline-none text-[16px] pl-[30px]' placeholder='Email Id' />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
