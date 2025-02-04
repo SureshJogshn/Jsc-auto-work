@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
-import { createUserWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import { auth, provider, db } from '../firebase';
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
@@ -32,17 +32,21 @@ export default function Register() {
                 registerPassword,
                 //save data
             );
+            // updte name
             const user = userCreate.user;
             await setDoc(doc(db, "users", user.uid), {
-                registerUser: registerEmail,
+                registerUser: registerUser,
                 registerEmail: registerEmail,
                 registerPhone: registerPhone,
                 registerPassword: registerPassword,
                 uid: user.uid,
             })
 
-            console.log(userCreate);
+            await updateProfile(user, {
+                displayName: registerUser
+            });
             alert("Register Successfully");
+            console.log(userCreate);
             setRegisterEmail("");
             setRegisterPassword("");
             setRegisterConfirmPassword("");
