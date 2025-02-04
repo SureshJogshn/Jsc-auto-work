@@ -52,16 +52,16 @@ export default function Login() {
             </div>
             <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white'>
 
-                <div className='flex flex-row items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-between items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdEmail className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" />
+                    <MdEmail className="text-2xl sm:text-2xl" />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[16px]' placeholder='Email Id' />
                 </div>
 
-                <div className='flex flex-row items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-between items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <FaUserLock className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl" />
+                    <FaUserLock className="text-2xl sm:text-2xl" />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
                         className='outline-none' placeholder='Password' />
                 </div>
