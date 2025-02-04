@@ -45,35 +45,34 @@ export default function Login() {
 
     return (
         <div className='w-full h-screen pt-[80px]'>
-            <div className='text-center  mx-auto text-white mt-[40px] text-[18px]
-            bg-[#3674B5] uppercase w-[300px] font-semibold p-2'>
+            <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
+            bg-[#3674B5] uppercase w-[270px] font-semibold p-2'>
                 <h1>Welcome Back</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white mt-[20px]'>
+            <form className='flex flex-col gap-4 p-6 py-[50px] w-[300px] h-[420px] mx-auto rounded bg-white'>
 
                 <div className='flex flex-row items-center w-[250px] text-[16px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdEmail className='text-gray-700 text-[18px]' />
+                    <MdEmail className='text-gray-700 text-2xl' />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[16px]' placeholder='Email Id' />
                 </div>
 
                 <div className='flex flex-row items-center w-[250px] text-[16px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <FaUserLock className='text-gray-700 text-[18px]' />
+                    <FaUserLock className='text-gray-700 text-2xl' />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
                         className='outline-none' placeholder='Password' />
                 </div>
-
-                <div className='flex flex-col gap-2 mt-2'>
+                <button className='text-gray-400 text-[12px] text-end hover:text-gray-500'>Forgot Your Password?</button>
+                <div className='flex flex-col gap-2'>
                     <button onClick={login} className='bg-[#3674B5] duration-100
                          border-2 border-white text-white hover:bg-[#578FCA]
                         font-semibold text-[14px] text-black py-2 rounded'>Sign In</button>
 
                     <button onClick={() => navigate("/register")} className='border-2 border-[#3674B5] text-[#3674B5] 
                         font-semibold text-[14px] hover:text-black py-[5px] rounded '>Sign Up</button>
-
                 </div>
                 <p className='text-gray-400 text-center text-[16px]'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
