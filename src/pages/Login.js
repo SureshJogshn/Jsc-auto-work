@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { signInWithEmailAndPassword, signInWithPopup, signInWithRedirect, getRedirectResult } from 'firebase/auth'
+import { signInWithEmailAndPassword, signInWithRedirect, getRedirectResult } from 'firebase/auth'
 import { auth, provider } from '../firebase'
 import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
