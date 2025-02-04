@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       {user && <Navbar user={user} />}
-      <Routes>
+      <Routes basename="/">
         <Route path="/" element={user ? <Navigate to="/home" /> : <Register />} />
         <Route path="/home" element={user ? <HeroSection /> : <Navigate to="/login" />} />
         <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
