@@ -71,14 +71,14 @@ export default function Login() {
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdEmail />
+                    <MdEmail className="text-2xl sm:text-3xl md:text-4xl" />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[16px]' placeholder='Email Id' />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
-                    <FaUserLock />
+                    <FaUserLock className="text-2xl sm:text-3xl md:text-4xl" />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
                         className='outline-none' placeholder='Password' />
                 </div>
