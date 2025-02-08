@@ -48,14 +48,14 @@ const HeroSection = () => {
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
                     <div className='flex flex-col text-center items-center md:text-start sm:gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
                         <img src={logo} alt='logo' className='animate-carMove md:hidden w-[300px] sm:w-[330px] md:w-[600px] mx-auto' />
-                        <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-orange-500'>
+                        <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-white'>
                             Jai Shree Chamunda Auto Electric Work</h1>
                         <div>
                             <p className='flex text-[18px] sm:text-[15px] tracking-wide md:text-3xl text-white font-semibold mt-4'>Your Trusted Garage Solution!</p>
                             <p className='text-white'> <span className='text-white' ref={typedElement}></span></p>
 
                             <ul className='flex flex-col gap-3 mt-8'>
-                                <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-green-500 hover:bg-gray-300
+                                <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-white hover:bg-gray-300
                                  font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
                                     Read More</button>
                             </ul>

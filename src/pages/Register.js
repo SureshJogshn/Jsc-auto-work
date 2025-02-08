@@ -8,6 +8,7 @@ import { MdLockPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import { IoMdPhonePortrait } from "react-icons/io";
 import { setDoc, doc } from 'firebase/firestore';
+import engine from '../images/engine.jpg'
 
 
 export default function Register() {
@@ -52,7 +53,7 @@ export default function Register() {
             setRegisterEmail("");
             setRegisterPassword("");
             setRegisterConfirmPassword("");
-            navigate("/home");
+            navigate("/login");
         } catch (error) {
             console.log(error.message);
             seterrorMessage("Register failed");
@@ -75,15 +76,15 @@ export default function Register() {
     }
 
     return (
-        <div className='w-full h-screen pt-[20px]'>
+        <div className='w-full h-screen pt-[20px] bg-cover bg-center' style={{ backgroundImage: `url(${engine})` }}>
             <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
             bg-[#3674B5] uppercase w-[304px] shadow-sm shadow-black font-semibold p-2'>
                 <h1>Welcome</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[16px] mt-2 shadow-sm shadow-black w-[300px] h-[500px] mx-auto bg-white'>
+            <form className='flex flex-col gap-4 p-6 py-[16px] mt-2 shadow-sm shadow-black w-[300px] h-[560px] mx-auto bg-white'>
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
-                gap-2 px-2 py-[4px] rounded'>
+                gap-2 px-2 py-[5px] rounded'>
                     <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterUser(event.target.value)} value={registerUser}
                         className='outline-none text-[16px]' placeholder='Username' />
@@ -133,9 +134,9 @@ export default function Register() {
                 </div>
                 <p className='text-gray-400 text-[16px] text-center'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
-                    className='border-2 border-[#3674B5] text-[14px] font-semibold text-red-700 py-2 px-10
-                    rounded-full flex flex-row items-center hover:bg-[#578FCA]
-                     hover:text-white justify-evenly '><FcGoogle className='text-[18px]' />Sign up with Google</button>
+                    className='border-2 border-[#3674B5] text-[14px] font-semibold text-black py-2 px-10
+                    rounded-full flex flex-row items-center
+                     hover:text-[#3674B5] justify-evenly '><FcGoogle className='text-[18px]' />Sign up with Google</button>
             </form>
         </div>
     )

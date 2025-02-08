@@ -5,6 +5,7 @@ import { MdEmail } from "react-icons/md";
 import { FaUserLock } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
+import en from '../images/en.jpg'
 
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
@@ -61,13 +62,13 @@ export default function Login() {
     }
 
     return (
-        <div className='w-full h-screen pt-[80px]'>
+        <div className='w-full h-screen pt-[80px] bg-cover bg-center' style={{ backgroundImage: `url(${en})` }}>
             <div className='text-center  mx-auto text-white mt-[20px] text-[14px]
             bg-[#3674B5] uppercase w-[304px] shadow-sm shadow-black font-semibold p-2'>
                 <h1>Welcome Back</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[20px] mt-2 shadow-sm shadow-black w-[300px] h-[420px] mx-auto rounded bg-white'>
+            <form className='flex flex-col gap-4 p-6 py-[70px] mt-2 shadow-sm shadow-black w-[300px] h-[420px] mx-auto rounded bg-white'>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>
@@ -94,8 +95,8 @@ export default function Login() {
                 <p className='text-gray-400 text-center text-[16px]'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
                     className='border-2 border-[#3674B5] text-[14px] font-semibold text-black py-2
-                            rounded-full flex flex-row items-center hover:bg-white text-red-500 py-2 px-10
-                             hover:text-black justify-evenly'><FcGoogle className='text-[18px]' />Continue with Google</button>
+                            rounded-full flex flex-row items-center hover:bg-white text-black py-2 px-10
+                             hover:text-[#3674B5] justify-evenly'><FcGoogle className='text-[18px]' />Continue with Google</button>
             </form>
         </div>
     )
