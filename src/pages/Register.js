@@ -16,6 +16,8 @@ export default function Register() {
     const [registerPhone, setRegisterPhone] = useState("");
     const [registerPassword, setRegisterPassword] = useState("");
     const [registerConfirmPassword, setRegisterConfirmPassword] = useState("");
+    const [msg, setMessage] = useState("");
+    const [errorMessage, seterrorMessage] = useState("");
     const navigate = useNavigate();
 
     const register = async (event) => {
@@ -45,7 +47,7 @@ export default function Register() {
             await updateProfile(user, {
                 displayName: registerUser
             });
-            alert("Register Successfully");
+            setMessage("Register Successfully");
             console.log(userCreate);
             setRegisterEmail("");
             setRegisterPassword("");
@@ -53,7 +55,7 @@ export default function Register() {
             navigate("/home");
         } catch (error) {
             console.log(error.message);
-            alert("Register failed");
+            seterrorMessage("Register failed");
         }
     }
 
@@ -65,7 +67,7 @@ export default function Register() {
                 provider,
             );
             console.log(result);
-            alert("google signing");
+            setMessage("google signing");
             navigate("/home");
         } catch (error) {
             alert("google signing failed");
@@ -114,7 +116,12 @@ export default function Register() {
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
                         className='outline-none text-[16px]' placeholder='Confirm password' required />
                 </div>
-
+                {
+                    register ?
+                        <h1 className='text-center font-semibold text-green-500'>{msg}</h1>
+                        :
+                        <h1 className='text-center font-semibold text-red-500'>{errorMessage}</h1>
+                }
                 <div className='flex flex-col gap-2 mt-2'>
                     <button onClick={register} className='bg-[#3674B5] duration-100
                  border-2 border-white text-white hover:bg-[#578FCA]

@@ -9,6 +9,7 @@ import Footer from './Footer';
 import logo from '../assets/logo.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
+import bg from '../images/bg.jpg'
 
 const HeroSection = () => {
     const typedElement = useRef(null);
@@ -41,19 +42,20 @@ const HeroSection = () => {
     return (
         <>
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
-            <div className='w-full md:h-[670px] bg-[#2C2F3A] p-3' id='home'>
+            <div className='w-full md:h-[670px] bg-cover bg-center opacity-3 w-full p-3
+            ' id='home' style={{ backgroundImage: `url(${bg})` }}>
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
                     <div className='flex flex-col text-center items-center md:text-start sm:gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
                         <img src={logo} alt='logo' className='animate-carMove md:hidden w-[300px] sm:w-[330px] md:w-[600px] mx-auto' />
-                        <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-white'>
+                        <h1 className='text-3xl tracking-wide sm:text-4xl md:text-6xl font-bold text-orange-500'>
                             Jai Shree Chamunda Auto Electric Work</h1>
                         <div>
                             <p className='flex text-[18px] sm:text-[15px] tracking-wide md:text-3xl text-white font-semibold mt-4'>Your Trusted Garage Solution!</p>
                             <p className='text-white'> <span className='text-white' ref={typedElement}></span></p>
 
                             <ul className='flex flex-col gap-3 mt-8'>
-                                <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-white hover:bg-gray-300
+                                <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-green-500 hover:bg-gray-300
                                  font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
                                     Read More</button>
                             </ul>

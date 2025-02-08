@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import ServicesDetails from "../ServicesDetails";
-import { useNavigate } from 'react-router-dom';
 const ServiceSlider = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
-    const navigate = useNavigate();
 
     const handleNext = () => {
         setCurrentIndex((prevIndex) =>
@@ -47,9 +45,6 @@ const ServiceSlider = () => {
                                         <h2 className="text-[18px] md:text-2xl text-white font-semibold mt-3"><span></span> Features</h2>
                                         <p className="text-white  text-[13px]  md:text-[20px]"><span>✔</span> {service.features.first}</p>
                                         <p className="text-white  text-[13px]  md:text-[20px]"><span>✔</span> {service.features.second}</p>
-                                        <button onClick={() => navigate("/readserivce")} className="border border-white py-2 px-[50px] md:px-[100px] text-[12.9px] mt-6 md:text-[15px] bg-white 
-                                        rounded text-black font-semibold hover:text-black hover:bg-gray-300
-                                     ">Read More</button>
                                     </div>
                                 </div>
                             </div>

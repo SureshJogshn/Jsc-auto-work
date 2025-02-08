@@ -5,10 +5,10 @@ import HeroSection from './components/HeroSection';
 import Login from './pages/Login';
 import ReadMore from './pages/ReadMore';
 import Register from './pages/Register';
-import RaadServices from './pages/RaadServices';
 import Navbar from './components/Navbar';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
+import ContextData from './Data/ContextData';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -22,13 +22,13 @@ function App() {
 
   return (
     <>
+
       {user && <Navbar user={user} />}
       <Routes basename="/">
         <Route path="/" element={user ? <Navigate to="/home" /> : <Register />} />
         <Route path="/home" element={user ? <HeroSection /> : <Navigate to="/login" />} />
         <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
-        <Route path="/read" element={user ? <ReadMore /> : <Navigate to="/login" />} />
-        <Route path="/readservice" element={user ? <RaadServices /> : <Navigate to="/login" />} />
+        <Route path="/read" element={user ? <ContextData> <ReadMore /> </ContextData> : <Navigate to="/login" />} />
       </Routes>
     </>
   );
