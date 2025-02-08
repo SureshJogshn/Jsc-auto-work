@@ -69,7 +69,7 @@ export default function Register() {
             );
             console.log(result);
             setMessage("google signing");
-            navigate("/home");
+            navigate("/login");
         } catch (error) {
             alert("google signing failed");
         }
