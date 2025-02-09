@@ -25,7 +25,7 @@ function App() {
 
       {user && <Navbar user={user} />}
       <Routes basename="/">
-        <Route path="/" element={user ? <Navigate to="/home" /> : <Register />} />
+        <Route path="/" element={user ? <Navigate to="/login" /> : <Register />} />
         <Route path="/home" element={user ? <HeroSection /> : <Navigate to="/login" />} />
         <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
         <Route path="/read" element={user ? <ContextData> <ReadMore /> </ContextData> : <Navigate to="/login" />} />
