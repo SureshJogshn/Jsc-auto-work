@@ -68,7 +68,7 @@ export default function Login() {
                 <h1>Welcome Back</h1>
                 <h1>JSC Auto Electric Work's</h1>
             </div>
-            <form className='flex flex-col gap-4 p-6 py-[70px] mt-2 shadow-sm shadow-black w-[300px] h-[420px] mx-auto rounded bg-white'>
+            <form className='flex flex-col gap-4 p-6 py-[70px] mt-2 shadow-sm shadow-black w-[300px] h-[520px] mx-auto rounded bg-white'>
 
                 <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
                 gap-2 px-2 py-[4px] rounded'>

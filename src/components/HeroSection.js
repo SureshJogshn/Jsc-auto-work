@@ -42,7 +42,7 @@ const HeroSection = () => {
     return (
         <>
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
-            <div className='w-full md:h-[670px] bg-cover bg-center opacity-3 w-full p-3
+            <div className='w-full md:h-[670px] bg-gray-300 opacity-90 bg-cover bg-center opacity-3 w-full p-3
             ' id='home' style={{ backgroundImage: `url(${bg})` }}>
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
@@ -54,10 +54,13 @@ const HeroSection = () => {
                             <p className='flex text-[18px] sm:text-[15px] tracking-wide md:text-3xl text-white font-semibold mt-4'>Your Trusted Garage Solution!</p>
                             <p className='text-white'> <span className='text-white' ref={typedElement}></span></p>
 
-                            <ul className='flex flex-col gap-3 mt-8'>
+                            <ul className='flex flex-row mt-8'>
                                 <button onClick={() => navigate("/read")} className='border border-white text-[14px] bg-white hover:bg-gray-300
-                                 font-semibold tracking-wide rounded-lg text-black text-center w-[250px] py-2'>
+                                 font-semibold tracking-wide rounded-lg text-black text-center w-[120px] mx-auto py-2'>
                                     Read More</button>
+                                <button onClick={() => navigate("/maker")} className='border border-white text-[14px] hover:bg-white
+                                 font-semibold tracking-wide rounded-lg text-white hover:text-black text-center w-[120px] mx-auto py-2'>
+                                    Maker</button>
                             </ul>
                         </div>
                     </div>

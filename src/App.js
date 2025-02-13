@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from './firebase';
 import ContextData from './Data/ContextData';
+import CarsLogo from './pages/CarsLogo';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -29,6 +30,7 @@ function App() {
         <Route path="/home" element={user ? <HeroSection /> : <Navigate to="/login" />} />
         <Route path="/login" element={user ? <Navigate to="/home" /> : <Login />} />
         <Route path="/read" element={user ? <ContextData> <ReadMore /> </ContextData> : <Navigate to="/login" />} />
+        <Route path="/maker" element={user ? <CarsLogo /> : <Navigate to="/login" />} />
       </Routes>
     </>
   );
