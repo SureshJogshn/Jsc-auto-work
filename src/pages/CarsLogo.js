@@ -19,8 +19,8 @@ export default function CarsLogo() {
                 {carlogo.length > 0 ? (
                     carlogo.map((items, index) => (
                         <div key={index} className='cursor-pointer flex flex-col items-center justify-center shadow-sm shadow-black rounded
-                         w-[110px] mx-auto p-3'>
-                            <img src={items.imgCar} alt='img' className='w-[150px] mt-3' />
+                         p-3'>
+                            <img src={items.imgCar} alt='img' className='w-[50px] mt-3' />
                             <div className='p-4'>
                                 <p className='text-gray-600 text-2xl'>{items.carName}</p>
                             </div>
