@@ -18,7 +18,7 @@ export default function ContactUs() {
                         <p>Working Hours: Monday to Saturday, 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div className='w-[440px] md:w-[2000px] text-semibold bg-[#0f0f0f] p-4 h-[250px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
+                <div className='md:w-[2000px] text-semibold bg-[#0f0f0f] p-4 h-[250px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
                  overflow-hidden text-[15px] md:text-[18px] text-white rounded md:py-[10px] mt-[20px]'>
                     <p className='mt-3'>
                         Hello, main <strong>Naresh Kumar</strong> hoon, aur <strong>JSC Auto Electric</strong> mein hum aapki car-related electrical

@@ -44,7 +44,7 @@ const About = () => {
                         Aapko high-quality, cost-effective, aur dependable automotive electrical services dena, jisse aapka vehicle hamesha smoothly chale. Chahe wo complex ECM repair ho ya simple wiring issue, hum har solution ko aapki zarurat ke hisaab se precise aur reliable banate hain.
                     </p>
                 </div>
-                <div className='w-[455px] border-4 border-white relative text-semibold text-[20px] shadow-sm shadow-white rounded  flex flex-col'>
+                <div className='border-4 border-white relative text-semibold text-[20px] shadow-sm shadow-white rounded  flex flex-col'>
                     <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
                 </div>
             </div>
