@@ -73,7 +73,7 @@ export default function Register() {
 
     return (
         <div className='w-full h-screen pt-[20px] bg-cover bg-center bg-[#0f0f0f]'>
-            <form className='flex flex-col gap-3 p-6 py-[5px] bg-[#181818] mt-2 shadow-sm shadow-green-500 w-[300px] h-[630px] mx-auto bg-white'>
+            <form className='flex flex-col gap-3 p-6 py-[5px] bg-[#181818] mt-2 shadow-sm shadow-green-500 w-[300px] h-[630px] mx-auto'>
                 <div className='text-center mx-auto text-white text-[16px]
             uppercase text-[16px] font-semibold p-2'>
                     <IoCarSport className='text-center text-green-600 text-5xl mx-auto' />
