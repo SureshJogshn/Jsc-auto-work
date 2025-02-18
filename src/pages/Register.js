@@ -5,6 +5,11 @@ import { auth, provider, db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { setDoc, doc } from 'firebase/firestore';
 import { IoCarSport } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { FaUser } from "react-icons/fa";
+import { MdOutlinePassword } from "react-icons/md";
+import { IoMdPhonePortrait } from "react-icons/io";
 
 
 export default function Register() {
@@ -87,30 +92,35 @@ export default function Register() {
                 </div>
                 <div className='flex flex-row bg-[#0f0f0f] justify-center items-center w-[250px]
                 gap-2 px-2 py-[5px] rounded'>
+                    <FaUser className='text-white text-[16px]' />
                     <input onChange={(event) => setRegisterUser(event.target.value)} value={registerUser}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Username' required />
                 </div>
 
                 <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
+                    <MdEmail className='text-white text-[16px]' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Email id' required />
                 </div>
 
                 <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
+                    <IoMdPhonePortrait className='text-white text-[16px]' />
                     <input onChange={(event) => setRegisterPhone(event.target.value)} value={registerPhone}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Phone number' required />
                 </div>
 
                 <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
+                    <RiLockPasswordFill className='text-white text-[16px]' />
                     <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Password' required />
                 </div>
 
                 <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
+                    <MdOutlinePassword className='text-white text-[16px]' />
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Confirm password' required />
                 </div>

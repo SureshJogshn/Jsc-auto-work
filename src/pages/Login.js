@@ -5,6 +5,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { IoCarSport } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
 
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
@@ -75,13 +76,14 @@ export default function Login() {
                 </div>
                 <div className='flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdEmail className='text-white' />
+                    <MdEmail className='text-white text-[16px]' />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[14px] py-1 text-white bg-[#0f0f0f]' placeholder='email address' />
                 </div>
 
                 <div className='flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
+                    <RiLockPasswordFill className='text-white text-[16px]' />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
                         className='outline-none bg-[#0f0f0f] py-1 text-[14px] text-white' placeholder='Password' />
                 </div>
