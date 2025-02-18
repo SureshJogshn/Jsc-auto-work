@@ -60,7 +60,7 @@ export default function Login() {
     }
 
     return (
-        <div className='w-full h-screen pt-[80px] bg-cover bg-center bg-[#0f0f0f]'>
+        <div className='w-full h-screen pt-[60px] bg-cover bg-center bg-[#0f0f0f]'>
             <form className='flex flex-col gap-4 p-6 py-[10px] shadow-sm shadow-white w-[300px] h-[560px] mx-auto rounded bg-[#181818]'>
                 <div className='text-center text-white text-[16px] mb-5 uppercase font-semibold p-4'>
                     <IoCarSport className='text-center text-green-600 text-5xl mx-auto' />
