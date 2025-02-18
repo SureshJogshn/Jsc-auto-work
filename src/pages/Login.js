@@ -4,6 +4,7 @@ import { auth, provider } from '../firebase'
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
 import { IoCarSport } from "react-icons/io5";
+import { MdEmail } from "react-icons/md";
 
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
@@ -61,7 +62,7 @@ export default function Login() {
 
     return (
         <div className='w-full h-screen pt-[60px] bg-cover bg-center bg-[#0f0f0f]'>
-            <form className='flex flex-col gap-4 p-6 py-[10px] shadow-sm shadow-white w-[300px] h-[560px] mx-auto rounded bg-[#181818]'>
+            <form className='flex flex-col gap-4 p-6 py-[10px] w-[300px] h-[560px] mx-auto rounded bg-[#181818]'>
                 <div className='text-center text-white text-[16px] mb-5 uppercase font-semibold p-4'>
                     <IoCarSport className='text-center text-green-600 text-5xl mx-auto' />
                     <h1>Welcome Back</h1>
@@ -74,6 +75,7 @@ export default function Login() {
                 </div>
                 <div className='flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
+                    <MdEmail className='text-white' />
                     <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
                         className='outline-none text-[14px] py-1 text-white bg-[#0f0f0f]' placeholder='email address' />
                 </div>
