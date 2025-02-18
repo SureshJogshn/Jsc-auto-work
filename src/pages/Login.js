@@ -6,11 +6,13 @@ import { useNavigate } from 'react-router-dom';
 import { IoCarSport } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { Eye, EyeOff } from "lucide-react";
 
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const login = async (event) => {
         event.preventDefault();
@@ -81,11 +83,20 @@ export default function Login() {
                         className='outline-none text-[14px] py-1 text-white bg-[#0f0f0f]' placeholder='email address' />
                 </div>
 
-                <div className='flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
+                <div className='relative flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
                     <RiLockPasswordFill className='text-white text-[16px]' />
                     <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
+                        type={showPassword ? "text" : "password"}
                         className='outline-none bg-[#0f0f0f] py-1 text-[14px] text-white' placeholder='Password' />
+                    {/* Eye Icon Inside Input */}
+                    <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-[5%] top-[30%] text-white"
+                    >
+                        {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+                    </button>
                 </div>
                 <button className='text-gray-400 text-[12px] text-end hover:text-gray-500'>Forgot Your Password?</button>
                 <div className='flex flex-col gap-2'>

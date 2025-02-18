@@ -10,6 +10,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { MdOutlinePassword } from "react-icons/md";
 import { IoMdPhonePortrait } from "react-icons/io";
+import { Eye, EyeOff } from "lucide-react";
 
 
 export default function Register() {
@@ -21,6 +22,7 @@ export default function Register() {
     const [msg, setMessage] = useState("");
     const [errorMessage, seterrorMessage] = useState("");
     const navigate = useNavigate();
+    const [showPassword, setShowPassword] = useState(false);
 
     const register = async (event) => {
         event.preventDefault();
@@ -111,17 +113,26 @@ export default function Register() {
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Phone number' required />
                 </div>
 
-                <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
+                <div className='relative flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
                     <RiLockPasswordFill className='text-white text-[16px]' />
-                    <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
+                    <input onChange={(event) => setRegisterPassword(event.target.value)}
+                        type={showPassword ? "text" : "password"} value={registerPassword}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Password' required />
+                    <button
+                        type="button"
+                        onClick={() => setShowPassword(!showPassword)}
+                        className="absolute right-[5%] top-[30%] text-white"
+                    >
+                        {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
+                    </button>
                 </div>
 
                 <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
                     <MdOutlinePassword className='text-white text-[16px]' />
-                    <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
+                    <input onChange={(event) => setRegisterConfirmPassword(event.target.value)}
+                        type={showPassword ? "text" : "password"} value={registerConfirmPassword}
                         className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Confirm password' required />
                 </div>
                 {
