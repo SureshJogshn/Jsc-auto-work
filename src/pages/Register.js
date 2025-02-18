@@ -2,13 +2,9 @@ import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
 import { auth, provider, db } from '../firebase';
-import { MdEmail } from "react-icons/md";
-import { FaUserLock } from "react-icons/fa6";
-import { MdLockPerson } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
-import { IoMdPhonePortrait } from "react-icons/io";
 import { setDoc, doc } from 'firebase/firestore';
-import engine from '../images/engine.jpg'
+import { IoCarSport } from "react-icons/io5";
 
 
 export default function Register() {
@@ -76,46 +72,47 @@ export default function Register() {
     }
 
     return (
-        <div className='w-full h-screen pt-[20px] bg-cover bg-center' style={{ backgroundImage: `url(${engine})` }}>
-            <div className='text-center  mx-auto text-white mt-[50px] text-[14px]
-            bg-[#3674B5] uppercase w-[304px] shadow-sm shadow-black font-semibold p-2'>
-                <h1>Welcome</h1>
-                <h1>JSC Auto Electric Work's</h1>
-            </div>
-            <form className='flex flex-col gap-4 p-6 py-[16px] mt-2 shadow-sm shadow-black w-[300px] h-[560px] mx-auto bg-white'>
-                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+        <div className='w-full h-screen pt-[20px] bg-cover bg-center bg-[#0f0f0f]'>
+            <form className='flex flex-col gap-3 p-6 py-[5px] bg-[#181818] mt-2 shadow-sm shadow-green-500 w-[300px] h-[630px] mx-auto bg-white'>
+                <div className='text-center mx-auto text-white text-[16px]
+            uppercase text-[16px] font-semibold p-2'>
+                    <IoCarSport className='text-center text-green-600 text-5xl mx-auto' />
+                    <h1>Welcome</h1>
+                    <h1>JSC Auto Electric Work's</h1>
+                </div>
+                <div className='flex flex-row items-center gap-1 text-[12px] mx-auto'>
+                    <h3 className='text-gray-500'>Dont have an account yet?</h3>
+                    <button onClick={() => navigate("/login")} className='text-[#3674B5] 
+                        font-semibold text-[14px] hover:text-green-400 py-[5px] rounded '>Login</button>
+                </div>
+                <div className='flex flex-row bg-[#0f0f0f] justify-center items-center w-[250px]
                 gap-2 px-2 py-[5px] rounded'>
-                    <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterUser(event.target.value)} value={registerUser}
-                        className='outline-none text-[16px]' placeholder='Username' />
+                        className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Username' required />
                 </div>
 
-                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdEmail className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterEmail(event.target.value)} value={registerEmail}
-                        className='outline-none text-[16px]' placeholder='Email id' />
+                        className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Email id' required />
                 </div>
 
-                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
-                    <IoMdPhonePortrait className='text-gray-700 text-[25px] ' />
                     <input onChange={(event) => setRegisterPhone(event.target.value)} value={registerPhone}
-                        className='outline-none text-[16px]' placeholder='Phone number' />
+                        className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Phone number' required />
                 </div>
 
-                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
-                    <FaUserLock className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterPassword(event.target.value)} value={registerPassword}
-                        className='outline-none text-[16px]' placeholder='Password' required />
+                        className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Password' required />
                 </div>
 
-                <div className='flex flex-row justify-center items-center w-[250px] border-2 border-gray-400
+                <div className='flex flex-row justify-center bg-[#0f0f0f] items-center w-[250px]
                 gap-2 px-2 py-[4px] rounded'>
-                    <MdLockPerson className='text-gray-700 text-[25px]' />
                     <input onChange={(event) => setRegisterConfirmPassword(event.target.value)} value={registerConfirmPassword}
-                        className='outline-none text-[16px]' placeholder='Confirm password' required />
+                        className='outline-none py-1 text-[14px] text-white bg-[#0f0f0f]' placeholder='Confirm password' required />
                 </div>
                 {
                     register ?
@@ -123,18 +120,13 @@ export default function Register() {
                         :
                         <h1 className='text-center font-semibold text-red-500'>{errorMessage}</h1>
                 }
-                <div className='flex flex-col gap-2 mt-2'>
-                    <button onClick={register} className='bg-[#3674B5] duration-100
-                 border-2 border-white text-white hover:bg-[#578FCA]
+                <div className='flex flex-col gap-2'>
+                    <button onClick={register} className='bg-[#0174da] duration-100 text-white hover:bg-[#578FCA]
                 font-semibold text-[14px] text-black py-2 rounded-lg '>Sign Up</button>
-
-                    <button onClick={() => navigate("/login")} className='border-2 hover:bg-[#3674B5] hover:text-white border-[#3674B5] text-[#3674B5] 
-                font-semibold text-[14px] text-black py-[5px] rounded-lg'>Sign in</button>
-
                 </div>
                 <p className='text-gray-400 text-[16px] text-center'>----------------- OR -----------------</p>
                 <button onClick={googleSignup}
-                    className='border-2 border-[#3674B5] text-[14px] font-semibold text-black py-2 px-10
+                    className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-10
                     rounded-full flex flex-row items-center
                      hover:text-[#3674B5] justify-evenly '><FcGoogle className='text-[18px]' />Sign up with Google</button>
             </form>

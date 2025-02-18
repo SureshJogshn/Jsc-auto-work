@@ -1,26 +1,19 @@
 import React, { } from 'react'
 import { carlogo } from '../CarsLogoDetails';
-import { Link } from 'react-router-dom';
+import MakerNavabr from './MakerNavabr';
 export default function CarsLogo() {
+
     return (
         <div className='w-full h-screen mt-[110px] md:mt-[68px] bg-[#2C2F3A] py-[30px]'>
-            <h1 className='text-2xl font-semibold text-white text-center'>Maker</h1>
-            <div className='fixed top-[80px] bg-[#2C2F3A] left-0 w-full z-50'>
-                <h1 className='text-2xl font-semibold text-white text-center'>Maker</h1>
-                <ul className='fixed top-[110px] bg-[#2C2F3A] left-0 w-full flex flex-row text-white gap-5 items-center justify-center py-5'>
-                    <li><Link className='border-b-2 border-white'>Company's</Link></li>
-                    <li><Link className='hover:border-b-3 border-white'>Model</Link></li>
-                    <li><Link className='hover:border-b-3 border-white'>Year</Link></li>
-                    <li><Link className='hover:border-b-3 border-white'>Index</Link></li>
-                </ul>
-            </div>
+            <MakerNavabr />
             <div className='max-w-[1000px] border border-black mx-auto p-4 py-[50px] flex flex-row 
             items-center flex-wrap gap-5 bg-gray-300 border-2 rounded border-white overflow-x-scroll h-sreen'>
                 {carlogo.length > 0 ? (
                     carlogo.map((items, index) => (
-                        <div key={index} className='cursor-pointer flex flex-col items-center justify-center shadow-sm shadow-black rounded
+                        <div key={index} className='border border-black shadow-sm hover:scale-125 duration-500 
+                        hover:shadow-green-500 shadow-black rounded-lg cursor-pointer flex flex-col items-center justify-center
                          p-3'>
-                            <img src={items.imgCar} alt='img' className='w-[70px] mx-auto mt-3' />
+                            <img src={items.imgCar} alt='img' className='w-[70px] h-[70px] mx-auto mt-3' />
                             <div className='p-4'>
                                 <p className='text-gray-600 text-2xl'>{items.carName}</p>
                             </div>
