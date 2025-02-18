@@ -19,7 +19,7 @@ const ServiceSlider = () => {
     };
 
     return (
-        <div className="relative bg-[#3B3F4A] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]" id="services">
+        <div className="relative bg-[#181818] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]" id="services">
             <h2 className="text-[18px] font-semibold text-center mb-4 text-white">Our Services</h2>
             <div className="overflow-hidden">
                 <div
@@ -33,7 +33,7 @@ const ServiceSlider = () => {
                             style={{ width: "100%" }}
                         >
                             <div className="flex flex-col md:flex-row md:justify-around md:items-center 
-                            bg-[#2C2F3A] rounded-lg shadow-lg md:gap-9 p-8 md:p-9 text-center">
+                            bg-[#0f0f0f] rounded-lg shadow-lg md:gap-9 p-8 md:p-9 text-center">
                                 <div className="flex flex-col gap-3 md:gap-8 items-center">
                                     <img className="w-[50px] md:w-[70px] animate-carMove" src={service.img} alt="car" />
                                     <h1 className="text-[18px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>
@@ -56,13 +56,13 @@ const ServiceSlider = () => {
             {/* Navigation Arrows */}
             <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
+                className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ◀
             </button>
             <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 border-2 border-white text-white p-2 md:p-4 rounded-full shadow-lg"
+                className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black hover:bg-blue-700 text-white p-2 md:p-4 rounded-full shadow-lg"
             >
                 ▶
             </button>

@@ -3,7 +3,7 @@ import ceo from '../images/CEO.jpg'
 
 export default function ContactUs() {
     return (
-        <div className='md:w-full pt-[50px] pb-[53px] md:pt-[130px] md:pb-[120px] bg-[#20232A] p-2' id='contact'>
+        <div className='md:w-full pt-[50px] pb-[53px] md:pt-[130px] md:pb-[120px] bg-[#181818] p-2' id='contact'>
             <h1 className='text-2xl md:text-4xl font-semibold text-center text-white'>Contact Us</h1>
             <div className='flex flex-col md:flex-row md:my-[70px] md:gap-5 p-5'>
                 <div className='flex flex-col text-[15px] md:text-[18px] text-semibold text-white md:w-[2000px]
@@ -18,7 +18,7 @@ export default function ContactUs() {
                         <p>Working Hours: Monday to Saturday, 9:00 AM - 6:00 PM</p>
                     </div>
                 </div>
-                <div className='md:w-[2000px] text-semibold bg-[#333740] p-4 h-[200px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
+                <div className='w-[440px] md:w-[2000px] text-semibold bg-[#0f0f0f] p-4 h-[250px] md:h-[270px] shadow-md shadow-black overflow-y-scroll md:overflow-auto
                  overflow-hidden text-[15px] md:text-[18px] text-white rounded md:py-[10px] mt-[20px]'>
                     <p className='mt-3'>
                         Hello, main <strong>Naresh Kumar</strong> hoon, aur <strong>JSC Auto Electric</strong> mein hum aapki car-related electrical

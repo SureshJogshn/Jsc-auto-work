@@ -22,7 +22,7 @@ const About = () => {
     });
 
     return (
-        <div className='relative bg-[#333740] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]' id='about'>
+        <div className='relative bg-[#181818] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]' id='about'>
             <h2 className='text-[14px] w-[300px] md:w-[770px] mx-auto md:text-3xl font-semibold uppercase text-center mb-4 text-white'>About Us - Dedicated Experts in Automotive Solutions</h2>
             <div className='flex flex-col md:flex-row items-center justify-center shadow-lg mt-[30px] shadow-md rounded p-2 gap-3'>
                 <div className='relative h-[250px] md:h-[380px] overflow-y-scroll md:overflow-auto overflow-hidden  
@@ -44,7 +44,7 @@ const About = () => {
                         Aapko high-quality, cost-effective, aur dependable automotive electrical services dena, jisse aapka vehicle hamesha smoothly chale. Chahe wo complex ECM repair ho ya simple wiring issue, hum har solution ko aapki zarurat ke hisaab se precise aur reliable banate hain.
                     </p>
                 </div>
-                <div className='relative text-semibold text-[20px] shadow-sm shadow-white rounded  flex flex-col'>
+                <div className='w-[455px] border-4 border-white relative text-semibold text-[20px] shadow-sm shadow-white rounded  flex flex-col'>
                     <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
                 </div>
             </div>

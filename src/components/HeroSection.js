@@ -9,7 +9,6 @@ import Footer from './Footer';
 import logo from '../assets/logo.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
-import bg from '../images/bg.jpg'
 
 const HeroSection = () => {
     const typedElement = useRef(null);
@@ -42,8 +41,8 @@ const HeroSection = () => {
     return (
         <>
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
-            <div className='w-full md:h-[670px] bg-gray-300 opacity-90 bg-cover bg-center opacity-3 w-full p-3
-            ' id='home' style={{ backgroundImage: `url(${bg})` }}>
+            <div className='w-full md:h-[670px] bg-[#0f0f0f] w-full p-3 
+            ' id='home'>
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
                     <div className='flex flex-col text-center items-center md:text-start sm:gap-7 md:gap-4 mb-[100px] md:w-[845px]'>
@@ -71,7 +70,7 @@ const HeroSection = () => {
                             style={{ animationDelay: '20s' }} />
                     </div>
                 </div>
-            </div>
+            </div >
             <Navbar />
             <Services />
             <About />
