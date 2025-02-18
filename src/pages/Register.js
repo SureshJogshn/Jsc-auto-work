@@ -26,10 +26,6 @@ export default function Register() {
 
     const register = async (event) => {
         event.preventDefault();
-        if (registerPassword !== registerConfirmPassword) {
-            alert("password do not match");
-            return;
-        }
         try {
             const userCreate = await createUserWithEmailAndPassword(
                 // Register user with email and password
@@ -61,6 +57,24 @@ export default function Register() {
             console.log(error.message);
             seterrorMessage("Register failed");
         }
+        if (registerPassword !== registerConfirmPassword) {
+            alert("password do not match");
+            return;
+        }
+
+        if (!registerEmail.includes("@")) {
+            setRegisterEmail("Invalid Email!");
+            return;
+        }
+        if (registerPassword.length < 6) {
+            setRegisterPassword("Password must be at least 6 characters");
+            return;
+        }
+
+        if (!/^\d{10}$/.test(registerPhone)) {
+            setRegisterPhone("Phone number must be 10 digits");
+            return;
+        }
     }
 
     const googleSignup = async (event) => {
@@ -79,7 +93,7 @@ export default function Register() {
     }
 
     return (
-        <div className='w-full h-screen pt-[20px] bg-cover bg-center bg-[#0f0f0f]'>
+        <div className='relative w-full h-screen pt-[20px] bg-cover bg-center bg-[#0f0f0f]'>
             <form className='flex flex-col gap-3 p-6 py-[5px] bg-[#181818] mt-2 w-[300px] h-[630px] mx-auto'>
                 <div className='text-center mx-auto text-white text-[16px]
             uppercase text-[16px] font-semibold p-2'>
@@ -151,6 +165,18 @@ export default function Register() {
                     rounded-full flex flex-row items-center
                      hover:text-[#3674B5] justify-evenly '><FcGoogle className='text-[18px]' />Sign up with Google</button>
             </form>
+            {/* {
+                register ? null :
+                    <div className='absolute right-[10%] top-[27%] p-5 rounded text-center bg-gradient-to-r from-blue-800 to-blue-500
+            w-[400px] h-[350px]'>
+                        <div className='flex flex-col gap-2 mt-[70px] justify-center items-center'>
+                            <h1 className='text-3xl text-white font-semibold'>Thank you <span>{user?.displayName}</span></h1>
+                            <h1 className='text-2xl text-white font-semibold'>Welcome, To JSC auto Electric</h1>
+                            <button onClick={navigate("/login")} className='bg-green-600 hover:bg-green-400 px-5 py-2 rounded text-white mt-5'>Continue</button>
+                        </div>
+                    </div>
+
+            } */}
         </div>
     )
 }
