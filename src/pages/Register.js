@@ -86,7 +86,7 @@ export default function Register() {
                     <h1>JSC Auto Electric Work's</h1>
                 </div>
                 <div className='flex flex-row items-center gap-1 text-[12px] mx-auto'>
-                    <h3 className='text-gray-500'>Dont have an account yet?</h3>
+                    <h3 className='text-gray-500'>Welcome back! Log in here</h3>
                     <button onClick={() => navigate("/login")} className='text-[#3674B5] 
                         font-semibold text-[14px] hover:text-green-400 py-[5px] rounded '>Login</button>
                 </div>
