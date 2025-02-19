@@ -59,7 +59,7 @@ export default function RatingComponent() {
         });
 
         return () => unsubscribe();
-    }, []);
+    }, [ratingsCollectionRef]);
 
     // **Like / Unlike Review**
     const likeReview = async (reviewId, likes) => {
