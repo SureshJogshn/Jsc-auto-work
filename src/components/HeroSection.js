@@ -9,6 +9,7 @@ import Footer from './Footer';
 import logo from '../assets/logo.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
+import Rating from './Rating';
 
 const HeroSection = () => {
     const typedElement = useRef(null);
@@ -75,6 +76,7 @@ const HeroSection = () => {
             <Services />
             <About />
             <ContactUs />
+            <Rating />
             <Footer />
         </>
     )

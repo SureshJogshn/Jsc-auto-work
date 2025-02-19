@@ -11,55 +11,61 @@ import { Eye, EyeOff } from "lucide-react";
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
     const [loginPassword, setLoginPassword] = useState('');
-    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false); // for handling loading state
+    const navigate = useNavigate();
+
+    const validateEmail = (email) => {
+        const regex = /\S+@\S+\.\S+/;
+        return regex.test(email);
+    }
 
     const login = async (event) => {
         event.preventDefault();
+
+        if (!validateEmail(loginEmail)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if (loginPassword.length < 6) {
+            alert("Password must be at least 6 characters.");
+            return;
+        }
+
+        setLoading(true);
         try {
-            const user = await signInWithEmailAndPassword(
-                auth,
-                loginEmail,
-                loginPassword
-            );
+            const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword);
             console.log(user);
-            alert("login successfully");
+            alert("Login successful!");
             navigate("/home");
         } catch (error) {
-            alert("login failed");
+            console.error(error);
+            let errorMessage = "Login failed. Please try again.";
+            if (error.code === "auth/user-not-found") {
+                errorMessage = "No user found with this email.";
+            } else if (error.code === "auth/wrong-password") {
+                errorMessage = "Incorrect password.";
+            }
+            alert(errorMessage);
+        } finally {
+            setLoading(false);
         }
     }
 
-    // useEffect(() => {
-    //     getRedirectResult(auth)
-    //         .then((result) => {
-    //             if (result?.user) {
-    //                 console.log("Login Sucessful...", result.user);
-    //                 navigate("/home");
-    //             }
-    //         })
-    //         .catch((error) => {
-    //             console.log("error", error.message);
-    //         })
-    // }, [navigate]);
-
-    // const googleSignup = () => {
-    //     signInWithRedirect(auth, provider);
-    // }
-
     const googleSignup = async (event) => {
         event.preventDefault();
+        setLoading(true);
         try {
-            const result = await signInWithPopup(
-                auth,
-                provider
-            );
+            const result = await signInWithPopup(auth, provider);
             console.log(result);
-            alert("Signing Successfuly");
+            alert("Signing Successful");
             navigate("/home");
         } catch (error) {
-            console.log(error.meassage);
-            alert("Signing failed!");
+            console.error(error);
+            alert("Signing failed. Please try again!");
+        } finally {
+            setLoading(false);
         }
     }
 
@@ -72,23 +78,31 @@ export default function Login() {
                     <h1>JSC Auto Electric Work's</h1>
                 </div>
                 <div className='flex flex-row items-center gap-1 text-[12px] mx-auto'>
-                    <h3 className='text-gray-500'>Dont have an account yet?</h3>
+                    <h3 className='text-gray-500'>Don't have an account yet?</h3>
                     <button onClick={() => navigate("/")} className='text-[#3674B5] 
-                        font-semibold text-[14px] hover:text-green-400 py-[5px] rounded '>Sign Up</button>
+                        font-semibold text-[14px] hover:text-green-400 py-[5px] rounded'>Sign Up</button>
                 </div>
                 <div className='flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
                     <MdEmail className='text-white text-[16px]' />
-                    <input onChange={(event) => setLoginEmail(event.target.value)} value={loginEmail}
-                        className='outline-none text-[14px] py-1 text-white bg-[#0f0f0f]' placeholder='email address' />
+                    <input
+                        onChange={(event) => setLoginEmail(event.target.value)}
+                        value={loginEmail}
+                        className='outline-none text-[14px] py-1 text-white bg-[#0f0f0f]'
+                        placeholder='email address'
+                    />
                 </div>
 
                 <div className='relative flex flex-row justify-center items-center w-[250px] bg-[#0f0f0f]
                 gap-2 px-2 py-[4px] rounded'>
                     <RiLockPasswordFill className='text-white text-[16px]' />
-                    <input onChange={(event) => setLoginPassword(event.target.value)} value={loginPassword}
+                    <input
+                        onChange={(event) => setLoginPassword(event.target.value)}
+                        value={loginPassword}
                         type={showPassword ? "text" : "password"}
-                        className='outline-none bg-[#0f0f0f] py-1 text-[14px] text-white' placeholder='Password' />
+                        className='outline-none bg-[#0f0f0f] py-1 text-[14px] text-white'
+                        placeholder='Password'
+                    />
                     {/* Eye Icon Inside Input */}
                     <button
                         type="button"
@@ -100,15 +114,26 @@ export default function Login() {
                 </div>
                 <button className='text-gray-400 text-[12px] text-end hover:text-gray-500'>Forgot Your Password?</button>
                 <div className='flex flex-col gap-2'>
-                    <button onClick={login} className='bg-[#0174da] duration-100
-                         text-white hover:bg-[#578FCA]
-                        font-semibold text-[14px] text-black py-2 rounded'>Sign In</button>
+                    <button
+                        onClick={login}
+                        disabled={loading}
+                        className={`bg-[#0174da] duration-100 
+                            text-white ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#578FCA]'}
+                            font-semibold text-[14px] text-black py-2 rounded`}
+                    >
+                        {loading ? "Signing In..." : "Sign In"}
+                    </button>
                 </div>
                 <p className='text-gray-400 text-center text-[16px]'>----------------- OR -----------------</p>
-                <button onClick={googleSignup}
-                    className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2
-                            rounded-full flex flex-row items-center hover:bg-white text-black py-2 px-10
-                             hover:text-[#3674B5] justify-evenly'><FcGoogle className='text-[18px]' />Continue with Google</button>
+                <button
+                    onClick={googleSignup}
+                    disabled={loading}
+                    className={`border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2
+                        rounded-full flex flex-row items-center hover:bg-white text-black py-2 px-10
+                        hover:text-[#3674B5] justify-evenly ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                    <FcGoogle className='text-[18px]' />Continue with Google
+                </button>
             </form>
         </div>
     )
