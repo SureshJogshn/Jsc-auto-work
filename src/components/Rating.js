@@ -93,7 +93,7 @@ export default function RatingComponent() {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-4 bg-gray-900 text-white rounded-md">
+        <div className="max-w-lg mx-auto p-4 bg-[#0f0f0f] text-white rounded-md">
             {/* Login Section */}
             {!user && (
                 <button onClick={loginWithGoogle} className="mb-4 px-4 py-2 bg-blue-500 rounded hover:bg-blue-600">
@@ -136,7 +136,7 @@ export default function RatingComponent() {
             <div className="mt-5">
                 <h3 className="text-lg font-bold mb-2">Reviews</h3>
                 {reviews.map((review) => (
-                    <div key={review.id} className="p-3 bg-gray-800 rounded-md mb-3">
+                    <div key={review.id} className="p-3 bg-[#181818] rounded-md mb-3">
                         {/* User Info */}
                         <div className="flex items-center mb-2">
                             {review.userPhoto ? (
