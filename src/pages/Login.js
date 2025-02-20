@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { signInWithEmailAndPassword, signInWithPopup, FacebookAuthProvider } from 'firebase/auth'
 import { auth, provider } from '../firebase'
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from 'react-router-dom';
@@ -15,6 +15,7 @@ export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false); // for handling loading state
     const navigate = useNavigate();
+    const fb = new FacebookAuthProvider();
 
     const validateEmail = (email) => {
         const regex = /\S+@\S+\.\S+/;
@@ -70,6 +71,15 @@ export default function Login() {
         }
     }
 
+    const handleFacebookLogin = async () => {
+        try {
+            const result = await signInWithPopup(auth, fb);
+            const user = result.user;
+            console.log("User Info:", user);
+        } catch (error) {
+            console.error("Error during Facebook login:", error);
+        }
+    }
     return (
         <div className='w-full h-screen pt-[60px] bg-cover bg-center bg-[#0f0f0f]'>
             <form className='flex flex-col gap-4 p-6 py-[10px] w-[300px] h-[560px] mx-auto rounded bg-[#181818]'>
@@ -136,7 +146,7 @@ export default function Login() {
                     <FcGoogle className='text-[18px]' />Continue with Google
                 </button>
                 <button
-                    onClick={googleSignup}
+                    onClick={handleFacebookLogin}
                     disabled={loading}
                     className={`border-2 border-[#3674B5] text-[14px] font-semibold text-white
                         rounded-full flex flex-row items-center text-black py-2 px-8

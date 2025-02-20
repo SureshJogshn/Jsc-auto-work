@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
-import { createUserWithEmailAndPassword, signInWithPopup, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithPopup, updateProfile, FacebookAuthProvider } from 'firebase/auth';
 import { auth, provider, db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { setDoc, doc } from 'firebase/firestore';
@@ -24,6 +24,7 @@ export default function Register() {
     const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
+    const fb = new FacebookAuthProvider();
 
     const register = async (event) => {
         event.preventDefault();
@@ -93,6 +94,16 @@ export default function Register() {
         }
     };
 
+    const handleFacebookSignUp = async () => {
+        try {
+            const result = await signInWithPopup(auth, fb);
+            const user = result.user;
+            console.log("User Registered:", user);
+        } catch (error) {
+            console.error("Facebook Register Error:", error);
+        }
+    };
+
     return (
         <div className='relative w-full h-screen pt-[20px] bg-cover bg-center bg-[#0f0f0f]'>
             <form className='flex flex-col gap-3 p-6 py-[5px] bg-[#181818] mt-2 w-[300px] h-[630px] mx-auto'>
@@ -150,7 +161,7 @@ export default function Register() {
                  rounded-full flex flex-row items-center hover:text-[#3674B5] justify-evenly '>
                     <FcGoogle className='text-[18px]' />Sign up with Google
                 </button>
-                <button onClick={googleSignup} className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-8
+                <button onClick={handleFacebookSignUp} className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-8
                  rounded-full flex flex-row items-center hover:text-[#3674B5] justify-evenly '>
                     <FaFacebook className='text-[18px] text-blue-500' />Sign up with Facebook
                 </button>
