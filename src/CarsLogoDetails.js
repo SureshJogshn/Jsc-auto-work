@@ -12,7 +12,8 @@ import logo_11 from './assets/cars-logo/12-kia.png';
 import logo_12 from './assets/cars-logo/13-lexus.png';
 import logo_13 from './assets/cars-logo/14-mazda.png';
 import logo_14 from './assets/cars-logo/15-opel.png';
-import logo_15 from './assets/cars-logo/15-opel.png';
+import logo_15 from './assets/cars-logo/audi.png';
+import logo_16 from './assets/cars-logo/chevrolet.png';
 
 const carlogo = [
     {
@@ -70,6 +71,9 @@ const carlogo = [
     {
         imgCar: logo_15,
     },
+    {
+        imgCar: logo_16
+    }
 
 
 

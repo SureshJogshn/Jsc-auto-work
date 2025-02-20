@@ -33,7 +33,7 @@ const ServiceSlider = () => {
                             style={{ width: "100%" }}
                         >
                             <div className="flex flex-col md:flex-row md:justify-around md:items-center 
-                            bg-[#0f0f0f] rounded-lg shadow-lg md:gap-9 p-8 md:p-9 text-center">
+                            bg-gradient-to-r from-black to-blue-900 rounded-lg shadow-lg md:gap-9 p-8 md:p-9 text-center">
                                 <div className="flex flex-col gap-3 md:gap-8 items-center">
                                     <img className="w-[50px] md:w-[70px] animate-carMove" src={service.img} alt="car" />
                                     <h1 className="text-[18px] md:text-3xl text-white font-semibold uppercase">{service.title}</h1>

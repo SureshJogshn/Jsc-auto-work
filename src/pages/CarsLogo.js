@@ -4,10 +4,10 @@ import CarNavbar from './CarNavbar';
 export default function CarsLogo() {
 
     return (
-        <div className='w-full mt-[70px] md:mt-[68px] py-[10px]'>
+        <div className='w-full bg-gradient-to-r from-black to-blue-900 mt-[70px] md:mt-[68px] py-[10px]'>
             <CarNavbar />
-            <div className='max-w-[1200px] border border-black mx-auto p-4 py-[50px] flex flex-row 
-            items-center flex-wrap gap-8 border-2 rounded border-white overflow-x-scroll h-sreen'>
+            <div className='max-w-[1200px] mx-auto p-4 py-[50px] flex flex-row 
+            items-center flex-wrap gap-8 rounded overflow-x-scroll h-sreen'>
                 {carlogo.length > 0 ? (
                     carlogo.map((items, index) => (
                         <div key={index} className='bg-[#F7F7F7] w-20 h-20 mx-auto hover:scale-125 duration-500 

@@ -11,7 +11,7 @@ export default function ContactUs() {
                     <img src={ceo} alt='ceo' className='shadow-sm shadow-white w-[100px] h-[100px] border-4 
                     mx-auto border-white rounded-full' />
                     <div className='text-white md:w-[500px] text-semibold mx-auto mt-1 
-                    text-black bg-gradient-to-r from-[#26355D] p-3 rounded'>
+                    text-black bg-gradient-to-r from-black to-blue-900 p-3 rounded'>
                         <p>Phone: +91 9001323068</p>
                         <p>Email: nareshjogsan900@gmail.com</p>
                         <p>Address: J.D. Complex III, Fes, Bhinmal Road, Jalore (Rajasthan) Pincode : 343001</p>
