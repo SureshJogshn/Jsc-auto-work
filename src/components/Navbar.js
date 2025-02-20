@@ -32,7 +32,7 @@ export default function Navbar({ user }) {
     }
 
     return (
-        <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-gradient-to-r from-black to-blue-900'>
+        <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-[#181818]'>
             <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
                 <div className='flex items-center'>
                     {toggle ?
