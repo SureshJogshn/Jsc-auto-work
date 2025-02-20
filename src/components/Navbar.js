@@ -71,8 +71,8 @@ export default function Navbar({ user }) {
 
                 {
                     <div className='flex flex-row items-center justify-center gap-2'>
-                        <img src={myuser.photoURL} alt='user' className='w-[30px] border-2 border-green-500 rounded-full' />
-                        <p className='text-white text-[16px]'>{myuser?.displayName}</p>
+                        <img src={myuser.photoURL} alt='user' className='w-[30px] rounded-full' />
+                        <p className='text-white text-[12px]'>{myuser?.displayName}</p>
                         <button onClick={logout} className='text-red-500' title='Press Logout'><IoMdLogOut className='text-white hover:text-red-500 text-[22px]' /></button>
                     </div>
                 }
