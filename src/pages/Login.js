@@ -7,6 +7,7 @@ import { IoCarSport } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { Eye, EyeOff } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Login() {
     const [loginEmail, setLoginEmail] = useState('');
@@ -129,10 +130,19 @@ export default function Login() {
                     onClick={googleSignup}
                     disabled={loading}
                     className={`border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2
-                        rounded-full flex flex-row items-center hover:bg-white text-black py-2 px-10
+                        rounded-full flex flex-row items-center text-black py-2 px-10
                         hover:text-[#3674B5] justify-evenly ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                 >
                     <FcGoogle className='text-[18px]' />Continue with Google
+                </button>
+                <button
+                    onClick={googleSignup}
+                    disabled={loading}
+                    className={`border-2 border-[#3674B5] text-[14px] font-semibold text-white
+                        rounded-full flex flex-row items-center text-black py-2 px-8
+                        hover:text-[#3674B5] justify-evenly ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                    <FaFacebook className='text-[18px] text-blue-500' />Continue with facebook
                 </button>
             </form>
         </div>

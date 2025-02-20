@@ -11,6 +11,7 @@ import { FaUser } from "react-icons/fa";
 import { MdOutlinePassword } from "react-icons/md";
 import { IoMdPhonePortrait } from "react-icons/io";
 import { Eye, EyeOff } from "lucide-react";
+import { FaFacebook } from "react-icons/fa";
 
 export default function Register() {
     const [registerUser, setRegisterUser] = useState("");
@@ -145,8 +146,13 @@ export default function Register() {
 
                 <p className='text-gray-400 text-[16px] text-center'>----------------- OR -----------------</p>
 
-                <button onClick={googleSignup} className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-10 rounded-full flex flex-row items-center hover:text-[#3674B5] justify-evenly '>
+                <button onClick={googleSignup} className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-10
+                 rounded-full flex flex-row items-center hover:text-[#3674B5] justify-evenly '>
                     <FcGoogle className='text-[18px]' />Sign up with Google
+                </button>
+                <button onClick={googleSignup} className='border-2 border-[#3674B5] text-[14px] font-semibold text-white py-2 px-8
+                 rounded-full flex flex-row items-center hover:text-[#3674B5] justify-evenly '>
+                    <FaFacebook className='text-[18px] text-blue-500' />Sign up with Facebook
                 </button>
             </form>
         </div>
