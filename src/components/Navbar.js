@@ -46,9 +46,9 @@ export default function Navbar({ user }) {
                         />
                     }
                     <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
-                    <div className='text-[18px] md:text-lg lg:text-xl ml-2 uppercase text-white font-bold'>
+                    {/* <div className='text-[14px] md:text-lg lg:text-xl ml-1 uppercase text-white font-bold'>
                         <span className='text-orange-400'>J</span> <span className='text-white'>S</span> <span className='text-green-400'>c</span>
-                    </div>
+                    </div> */}
                 </div>
 
                 <ul className='hidden md:flex gap-9 text-xs sm:text-sm md:text-lg lg:text-xl text-white'>
