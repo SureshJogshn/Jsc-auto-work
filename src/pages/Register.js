@@ -74,7 +74,7 @@ export default function Register() {
             setRegisterConfirmPassword("");
             navigate("/login");
         } catch (error) {
-            setErrorMessage("Registration failed: " + error.message);
+            setErrorMessage("Registration failed: ");
         } finally {
             setLoading(false);
         }
@@ -88,7 +88,7 @@ export default function Register() {
             setMessage("Google Sign-in Successful!");
             navigate("/login");
         } catch (error) {
-            setErrorMessage("Google Sign-in failed: " + error.message);
+            setErrorMessage("Google Sign-in failed: ");
         }
     };
 
