@@ -10,6 +10,7 @@ import logo from '../assets/logo.png';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Rating from './Rating';
+import CarAnimation from './CarAnimation';
 
 const HeroSection = () => {
     const typedElement = useRef(null);
@@ -42,7 +43,7 @@ const HeroSection = () => {
     return (
         <>
             {/* bg-gradient-to-r from-blue-600 to-blue-300 */}
-            <div className='w-full md:h-[670px] bg-[#0f0f0f] w-full p-3 
+            <div className='relative w-full md:h-[670px] bg-[#0f0f0f] w-full p-3 
             ' id='home'>
                 <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row justify-center md:justify-between md:gap-6
                  items-center mt-[95px] sm:mt-[85px] md:mt-[230px]'>
@@ -71,6 +72,7 @@ const HeroSection = () => {
                             style={{ animationDelay: '20s' }} />
                     </div>
                 </div>
+                <CarAnimation />
             </div >
             <Navbar />
             <Services />
