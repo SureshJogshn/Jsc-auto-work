@@ -22,7 +22,7 @@ const Ecm = () => {
         <div className='relative bg-[#181818] pt-[50px] pb-[50px] md:pt-[130px] md:pb-[120px]' id='about'>
             <h2 className='text-[14px] w-[300px] md:w-[770px] mx-auto md:text-3xl font-semibold uppercase text-center mb-4 text-white'>About Us - Dedicated Experts in Automotive Solutions</h2>
             <div className='flex flex-col md:flex-row items-center justify-center shadow-lg mt-[30px] shadow-md rounded p-2 gap-3'>
-                <div className='border-4 border-white relative text-semibold text-[20px] shadow-sm w-[400px] shadow-white rounded overflow-hidden flex flex-col'>
+                <div className='border-4 border-white relative text-semibold text-[20px] shadow-sm w-[300px] shadow-white rounded overflow-hidden flex flex-col'>
                     <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
                 </div>
             </div>
