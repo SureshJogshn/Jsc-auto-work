@@ -11,6 +11,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Rating from './Rating';
 import CarAnimation from './CarAnimation';
+import Ecm from './Ecm';
+import CarConversation from './CarConversation';
 
 const HeroSection = () => {
     const typedElement = useRef(null);
@@ -73,9 +75,11 @@ const HeroSection = () => {
                     </div>
                 </div>
                 <CarAnimation />
+                <CarConversation />
             </div >
             <Navbar />
             <Services />
+            <Ecm />
             <About />
             <ContactUs />
             <Rating />

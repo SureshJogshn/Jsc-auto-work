@@ -94,9 +94,6 @@ export default function Navbar({ user }) {
                     <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
                         <ScrollLink smooth={true} duration={600} to="footer">Business Hub</ScrollLink>
                     </li>
-                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
-                        <RouterLink to="/login">Login</RouterLink>
-                    </li>
                 </ul>
             </div>
         </div>
