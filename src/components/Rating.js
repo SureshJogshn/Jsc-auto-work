@@ -1,6 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { db, auth } from "../firebase";
-import { collection, addDoc, onSnapshot, updateDoc, doc, arrayUnion, arrayRemove } from "firebase/firestore";
+import {
+    collection,
+    addDoc,
+    onSnapshot,
+    updateDoc,
+    doc,
+    arrayUnion,
+    arrayRemove
+} from "firebase/firestore";
 import { FaStar, FaRegUser, FaThumbsUp, FaReply } from "react-icons/fa";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
@@ -10,10 +18,9 @@ export default function RatingComponent() {
     const [averageRating, setAverageRating] = useState(0);
     const [reviews, setReviews] = useState([]);
     const [reviewText, setReviewText] = useState("");
-    const user = auth.currentUser;  // Get logged-in user
+    const user = auth.currentUser;
     const ratingsCollectionRef = collection(db, "ratings");
 
-    // **Login with Google**
     const loginWithGoogle = async () => {
         const provider = new GoogleAuthProvider();
         try {
@@ -23,7 +30,6 @@ export default function RatingComponent() {
         }
     };
 
-    // **Submit Rating**
     const submitRating = async () => {
         if (rating === 0 || reviewText.trim() === "") {
             alert("Please select a rating and write a review!");
@@ -40,7 +46,7 @@ export default function RatingComponent() {
                 replies: [],
                 timestamp: new Date()
             });
-            setReviewText(""); // Clear text box after submission
+            setReviewText("");
             setRating(0);
             alert("Thank you for your review!");
         } catch (error) {
@@ -48,7 +54,6 @@ export default function RatingComponent() {
         }
     };
 
-    // **Fetch Reviews & Calculate Average Rating**
     useEffect(() => {
         const unsubscribe = onSnapshot(ratingsCollectionRef, (snapshot) => {
             const ratingsArray = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
@@ -59,9 +64,8 @@ export default function RatingComponent() {
         });
 
         return () => unsubscribe();
-    }, [ratingsCollectionRef]);
+    }, []);
 
-    // **Like / Unlike Review**
     const likeReview = async (reviewId, likes) => {
         if (!user) {
             alert("Please login to like!");
@@ -69,12 +73,11 @@ export default function RatingComponent() {
         }
         const reviewRef = doc(db, "ratings", reviewId);
         const updatedLikes = likes.includes(user.uid)
-            ? arrayRemove(user.uid)  // Remove like if already liked
-            : arrayUnion(user.uid);  // Add like if not liked
+            ? arrayRemove(user.uid)
+            : arrayUnion(user.uid);
         await updateDoc(reviewRef, { likes: updatedLikes });
     };
 
-    // **Reply to Review**
     const replyToReview = async (reviewId, replyText) => {
         if (!user) {
             alert("Please login to reply!");
@@ -93,16 +96,14 @@ export default function RatingComponent() {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-8 bg-[#0f0f0f] text-white rounded-md">
-            {/* Login Section */}
+        <div className="max-w-[95%] md:max-w-3xl mx-auto p-4 sm:p-6 md:p-8 bg-[#0f0f0f] text-white rounded-md">
             {!user && (
                 <button onClick={loginWithGoogle} className="mb-4 px-4 py-2 bg-blue-500 rounded hover:bg-blue-600">
                     Login with Google
                 </button>
             )}
 
-            {/* Rating Section */}
-            <h2 className="text-lg  font-bold mb-2">Rate Our Service</h2>
+            <h2 className="text-base sm:text-lg md:text-xl font-bold mb-2">Rate Our Service</h2>
             <div className="flex">
                 {[1, 2, 3, 4, 5].map((star) => (
                     <FaStar
@@ -115,29 +116,27 @@ export default function RatingComponent() {
                 ))}
             </div>
 
-            {/* Review Textbox */}
             <textarea
-                className="mt-3 text-sm p-2 w-full bg-gray-800 rounded border border-gray-600"
+                className="mt-3 text-sm sm:text-base p-2 w-full bg-gray-800 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows="2"
                 placeholder="Write a review..."
                 value={reviewText}
                 onChange={(e) => setReviewText(e.target.value)}
             />
 
-            {/* Submit Button */}
-            <button onClick={submitRating} className="mt-3 text-sm px-4 py-2 bg-blue-500 rounded hover:bg-blue-600">
+            <button
+                onClick={submitRating}
+                className="mt-3 text-sm px-4 py-2 bg-blue-500 rounded hover:bg-blue-600"
+            >
                 Submit Review
             </button>
 
-            {/* Display Average Rating */}
             <p className="mt-3 text-sm font-semibold">Average Rating: ⭐ {averageRating}</p>
 
-            {/* Reviews Section */}
-            <div className="mt-5 overflow-y-scroll h-[450px]">
-                <h3 className="text-am font-bold mb-2">Reviews</h3>
+            <div className="mt-5 overflow-y-scroll h-[400px] sm:h-[450px] md:h-[500px]">
+                <h3 className="text-sm sm:text-base font-bold mb-2">Reviews</h3>
                 {reviews.map((review) => (
                     <div key={review.id} className="p-3 bg-[#181818] rounded-md mb-3">
-                        {/* User Info */}
                         <div className="flex items-center mb-2">
                             {review.userPhoto ? (
                                 <img src={review.userPhoto} alt="User" className="w-8 h-8 rounded-full mr-2" />
@@ -147,23 +146,20 @@ export default function RatingComponent() {
                             <span className="font-semibold">{review.userName}</span>
                         </div>
 
-                        {/* Rating & Review Text */}
                         <p className="mb-3">⭐ {review.rating} - {review.text}</p>
 
-                        {/* Like Button */}
                         <button
                             onClick={() => likeReview(review.id, review.likes || [])}
-                            className={`text-sm mr- px-3 py-1 rounded ${review.likes?.includes(user?.uid) ? "bg-red-500" : "bg-blue-500"}`}
+                            className={`text-sm px-3 py-1 rounded ${review.likes?.includes(user?.uid) ? "bg-red-500" : "bg-blue-500"}`}
                         >
                             <FaThumbsUp className="text-sm inline mr-1 mt-2" /> {review.likes?.includes(user?.uid) ? "Unlike" : "Like"} ({review.likes?.length || 0})
                         </button>
 
-                        {/* Reply Input */}
                         {user && (
                             <div className="mt-2 flex items-center">
                                 <input
                                     type="text"
-                                    className="text-sm p-1 flex-grow bg-gray-700 rounded border border-gray-600"
+                                    className="text-sm p-1 flex-grow bg-gray-700 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     placeholder="Reply..."
                                     onKeyDown={(e) => {
                                         if (e.key === "Enter") replyToReview(review.id, e.target.value);
@@ -173,7 +169,6 @@ export default function RatingComponent() {
                             </div>
                         )}
 
-                        {/* Replies */}
                         {review.replies?.map((reply, index) => (
                             <div key={index} className="ml-4 mt-2 p-2 bg-gray-700 rounded">
                                 <span className="font-semibold">{reply.userName}:</span> {reply.text}
