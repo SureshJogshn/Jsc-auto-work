@@ -88,4 +88,4 @@ const HeroSection = () => {
     )
 }
 
-export default HeroSection;    yr sahi se koi gadbad mt krna
+export default HeroSection;
