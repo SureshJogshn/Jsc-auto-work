@@ -1,88 +1,101 @@
 import React, { useEffect, useState } from 'react';
-import { Link as RouterLink, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as RouterLink } from 'react-router-dom'; // For routing between pages
+import { Link as ScrollLink } from 'react-scroll';  // For scrolling to sections
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
-import { IoMdLogOut } from "react-icons/io";
+import logo from '../assets/logo.png';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../firebase';
-import logo from '../assets/logo.png';
+import { useNavigate } from 'react-router-dom';
+import { IoMdLogOut } from "react-icons/io";
 
 export default function Navbar({ user }) {
-  const [toggle, setToggle] = useState(true);
-  const [myuser, setMyUser] = useState({});
-  const navigate = useNavigate();
+    const [toggle, setToggle] = useState(true);
+    const [myuser, setMyUser] = useState({});
 
-  useEffect(() => {
-    onAuthStateChanged(auth, (currentUser) => {
-      setMyUser(currentUser);
-    });
-  }, []);
+    const navigate = useNavigate();
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-      alert("Logout Successfully");
-      navigate("/login");
-    } catch (error) {
-      alert("Try again");
+    useEffect(() => {
+        onAuthStateChanged(auth, (currentUser) => {
+            setMyUser(currentUser);
+        });
+    }, []);
+
+    const logout = async () => {
+        try {
+            await signOut(auth);
+            alert("Logout Successfully");
+            window.location.reload();
+            navigate("/login");
+        } catch (error) {
+            alert("try again");
+        }
     }
-  };
 
-  return (
-    <div className='sticky top-0 left-0 w-full z-50 bg-[#181818] shadow-md'>
-      <div className='max-w-[1240px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 p-4 md:p-6'>
+    return (
+        <div className='fixed top-0 left-0 w-full z-50 duration-300 bg-[#181818]'>
+            <div className='max-w-[1240px] mx-auto flex items-center p-7 md:p-5 gap-[100px] justify-between md:justify-around'>
+                <div className='flex items-center'>
+                    {toggle ?
+                        <AiOutlineMenu
+                            onClick={() => setToggle(!toggle)}
+                            className='text-2xl md:text-3xl hover:text-gray-500 text-white duration-100 cursor-pointer md:hidden block'
+                        /> :
+                        <AiOutlineClose
+                            onClick={() => setToggle(!toggle)}
+                            className='text-2xl md:text-3xl text-white duration-100 cursor-pointer md:hidden block'
+                        />
+                    }
+                    <img src={logo} alt='logo' className='hidden w-[90px] md:w-[130px]' />
+                    {/* <div className='text-[14px] md:text-lg lg:text-xl ml-1 uppercase text-white font-bold'>
+                        <span className='text-orange-400'>J</span> <span className='text-white'>S</span> <span className='text-green-400'>c</span>
+                    </div> */}
+                </div>
 
-        {/* Left: Logo + Hamburger */}
-        <div className='flex items-center w-full md:w-auto justify-between md:justify-start'>
-          <img src={logo} alt='logo' className='w-[80px] md:w-[130px] block' />
+                <ul className='hidden md:flex gap-9 text-xs sm:text-sm md:text-lg lg:text-xl text-white'>
+                    <li>
+                        <RouterLink className='hover:border-b-2 border-[#FBFBFB]' to="/home">Home</RouterLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="services">Services</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="about">About</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="contact">Contact</ScrollLink>
+                    </li>
+                    <li>
+                        <ScrollLink smooth={true} duration={600} className='hover:border-b-2 border-[#FBFBFB] cursor-pointer' to="footer">Business Hub</ScrollLink>
+                    </li>
+                </ul>
 
-          <div className='md:hidden'>
-            {toggle ? (
-              <AiOutlineMenu
-                onClick={() => setToggle(false)}
-                className='text-3xl text-white cursor-pointer'
-              />
-            ) : (
-              <AiOutlineClose
-                onClick={() => setToggle(true)}
-                className='text-3xl text-white cursor-pointer'
-              />
-            )}
-          </div>
+                {
+                    <div className='flex flex-row items-center justify-center gap-2'>
+                        <img src={myuser.photoURL} alt='user' className='w-[30px] rounded-full' />
+                        <p className='text-white text-[12px]'>{myuser?.displayName}</p>
+                        <button onClick={logout} className='text-red-500' title='Press Logout'><IoMdLogOut className='text-white hover:text-red-500 text-[22px]' /></button>
+                    </div>
+                }
+
+                {/* Responsive menu */}
+                <ul className={`md:hidden bg-[#181818] fixed top-[80px] h-screen w-full left-0 duration-500 ${!toggle ? 'left-0' : 'left-[-100%]'}`}>
+                    <li className='border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <RouterLink to="/home">Home</RouterLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="services">Services</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="about">About</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="contact">Contact</ScrollLink>
+                    </li>
+                    <li className='cursor-pointer border-b border-gray-500 p-3 font-bold text-[20px] duration-100 hover:bg-gradient-to-r cursor-pointer from-white text-white hover:text-black font-semibold hover:shadow-2xl'>
+                        <ScrollLink smooth={true} duration={600} to="footer">Business Hub</ScrollLink>
+                    </li>
+                </ul>
+            </div>
         </div>
-
-        {/* Center: Menu (Desktop) */}
-        <ul className='hidden md:flex gap-6 text-white text-sm sm:text-base md:text-lg'>
-          <li><RouterLink className='hover:border-b-2 border-white' to="/home">Home</RouterLink></li>
-          <li><ScrollLink smooth={true} duration={600} className='cursor-pointer hover:border-b-2 border-white' to="services">Services</ScrollLink></li>
-          <li><ScrollLink smooth={true} duration={600} className='cursor-pointer hover:border-b-2 border-white' to="about">About</ScrollLink></li>
-          <li><ScrollLink smooth={true} duration={600} className='cursor-pointer hover:border-b-2 border-white' to="contact">Contact</ScrollLink></li>
-          <li><ScrollLink smooth={true} duration={600} className='cursor-pointer hover:border-b-2 border-white' to="footer">Business Hub</ScrollLink></li>
-        </ul>
-
-        {/* Right: User Info */}
-        <div className='flex items-center gap-2'>
-          {myuser?.photoURL && (
-            <img src={myuser.photoURL} alt='user' className='w-[30px] h-[30px] rounded-full' />
-          )}
-          <p className='text-white text-sm hidden sm:block'>{myuser?.displayName}</p>
-          <button onClick={logout} title='Logout'>
-            <IoMdLogOut className='text-white hover:text-red-500 text-[22px]' />
-          </button>
-        </div>
-
-        {/* Mobile Menu */}
-        {!toggle && (
-          <ul className='md:hidden absolute top-[80px] left-0 w-full bg-[#181818] text-white text-xl space-y-4 p-4'>
-            <li><RouterLink to="/home" onClick={() => setToggle(true)}>Home</RouterLink></li>
-            <li><ScrollLink to="services" smooth={true} duration={600} onClick={() => setToggle(true)}>Services</ScrollLink></li>
-            <li><ScrollLink to="about" smooth={true} duration={600} onClick={() => setToggle(true)}>About</ScrollLink></li>
-            <li><ScrollLink to="contact" smooth={true} duration={600} onClick={() => setToggle(true)}>Contact</ScrollLink></li>
-            <li><ScrollLink to="footer" smooth={true} duration={600} onClick={() => setToggle(true)}>Business Hub</ScrollLink></li>
-          </ul>
-        )}
-
-      </div>
-    </div>
-  );
+    );
 }
